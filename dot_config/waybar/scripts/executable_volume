@@ -1,0 +1,15 @@
+#!/bin/bash
+
+inc_volume() {
+  pamixer -i 5
+}
+
+dec_volume() {
+  pamixer -d 5
+}
+
+if [[ "$1" == "--inc" ]]; then
+  inc_volume
+elif [[ "$1" == "--dec" ]]; then
+  dec_volume
+fi

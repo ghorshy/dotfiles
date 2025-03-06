@@ -1,0 +1,118 @@
+{
+    "layer": "top",
+    "position": "top",
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "height": 32,
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["battery","pulseaudio","pulseaudio#microphone","tray","clock","custom/power_btn"],
+
+    "hyprland/window": {
+        "format": "{}"
+    },
+
+    "custom/power_btn": {
+        "format": "",
+        "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "persistent_workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": [],
+            "6": [],
+            "7": [],
+            "8": [],
+            "9": [],
+            "10": []
+        }
+    },
+
+    "tray": {
+        "icon-size": 14,
+        "spacing": 16
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip": true,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "format": {
+                "today": "<span color='#81d4fa'>{}</span>"
+            }
+        }
+    },
+
+    "battery": {
+        "states": {
+            "good": 80,
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    
+    // "network": {
+    //     // "interface": "wlp2*", // (Optional) To force the use of this interface
+    //     "format-wifi": "",
+    //     "format-ethernet": "",
+    //     "tooltip-format": "{ifname} via {gwaddr} ",
+    //     "format-linked": "{ifname} (No IP) ",
+    //     "format-disconnected": "⚠",
+    //     "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    // },
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "",
+        "on-click": "~/.config/waybar/scripts/volume --toggle",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
+        "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
+        "scroll-step": 5,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "tooltip-format": "{volume}%"
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "on-click": "./scripts/volume --toggle-mic",
+        "on-click-right": "pavucontrol",
+        "on-scroll-up": "~/.config/HyprV/waybar/scripts/volume --mic-inc",
+        "on-scroll-down": "~/.config/HyprV/waybar/scripts/volume --mic-dec",
+        "scroll-step": 5
+    },
+    
+    "temperature": {
+        "thermal-zone": 1,
+        "format": " {temperatureC}°C",
+        "critical-threshold": 70,
+        "format-critical": " {temperatureC}°C",
+        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
+    }
+}

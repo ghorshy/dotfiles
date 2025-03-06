@@ -1,0 +1,92 @@
+* {
+    font-family: "Inter";
+    font-weight: bold;
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0, 0, 0, 0.4) 95%, rgba(0,0,0,0) 100%);
+}
+
+tooltip {
+    background: #212121;
+    opacity: 0.8;
+    border-radius: 4px;
+}
+
+#window{
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-top: 2px;
+}
+
+#battery:hover,
+#pulseaudio:hover,
+#tray > *:hover,
+#custom-power_btn:hover,
+#clock:hover{
+    opacity: 0.5;
+}
+
+#workspaces button {
+    margin-right: 5px;
+    border-radius: 4px;
+}
+
+#workspaces button.active{
+    background: #212121;
+}
+
+#workspaces button.focused {
+    background: #eba0ac;
+}
+
+#workspaces button.urgent {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    20% {
+        background-color: rgba(33, 33, 33, 0);
+    }
+    40% {
+        background-color: rgba(189, 189, 189, 0.5);
+    }
+    90% {
+        background-color: rgba(33, 33, 33, 0);
+    }
+}
+
+#workspaces button:hover {
+    background: rgba(66, 66, 66, 0.3);
+    animation: none;
+}
+
+#workspaces{
+    padding-left: 8px;
+}
+
+#custom-power_btn, #network, #pulseaudio, #pulseaudio.microphone{
+    margin-left: 10px;
+    margin-right: 12px;
+}
+
+#tray{
+    margin-left: 10px;
+    margin-right: 6px;
+}
+
+#temperature.critical {
+    color: #e92d4d;
+}
+
+#clock{
+    min-width: 36px;
+    margin-left: 10px;
+    padding-right: 6px;
+}
+
+#custom-power_btn{
+  padding-right: 10px;
+}
