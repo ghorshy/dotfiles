@@ -17,7 +17,8 @@
     "custom/power_btn": {
         "format": "",
         "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
-        "tooltip": false
+        "tooltip": false,
+        "cursor": false
     },
 
     "hyprland/workspaces": {
@@ -94,7 +95,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "tooltip-format": "{volume}%"
+        "tooltip-format": "{volume}%",
+        "cursor": false
     },
 
     "pulseaudio#microphone": {
@@ -105,7 +107,8 @@
         "on-click-right": "pavucontrol",
         "on-scroll-up": "~/.config/HyprV/waybar/scripts/volume --mic-inc",
         "on-scroll-down": "~/.config/HyprV/waybar/scripts/volume --mic-dec",
-        "scroll-step": 5
+        "scroll-step": 5,
+        "cursor": false
     },
     
     "temperature": {
