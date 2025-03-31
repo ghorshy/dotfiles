@@ -28,6 +28,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
 alias ll="ls -al"
+alias cls="clear"
 
 bindkey "^[[H" beginning-of-line
 bindkey "^[[3~" delete-char
