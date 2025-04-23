@@ -1,0 +1,84 @@
+configuration {
+    show-icons:                 false;
+    hover-select:               true;
+    me-select-entry:            "";
+    me-accept-entry:            "MousePrimary";
+
+}
+
+* {
+  font: "Inter 10";
+}
+window {
+    transparency:                "real";
+    location:                    center;
+    anchor:                      center;
+    fullscreen:                  false;
+    width:                       500px;
+    font: "Inter";
+    enabled:                     true;
+    cursor:                      "default";
+    background-color:            transparent;
+}
+
+mainbox {
+    background-color:            transparent;
+    children:                    [ "listview" ];
+}
+
+message {
+    enabled:                     true;
+    padding:                     8px;
+    background-color:            transparent;
+    text-color:                  #FAFAFA;
+}
+
+textbox {
+    background-color:            inherit;
+    text-color:                  inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+    blink:                       true;
+    markup:                      true;
+}
+
+// Layout of buttons
+listview {
+    enabled:                     true;
+    columns:                     5;
+    lines:                       1;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     4px;
+    background-color:            transparent;
+    cursor:                      "default";
+}
+
+// Buttons and their icons
+element {
+    enabled:                     true;
+    padding:                     25px 0px;
+    border:                      1px solid;
+    border-radius:               4px;
+    border-color:                #595959;
+    background-color:            #212121;
+    text-color:                  #FAFAFA;
+    cursor:                      pointer;
+}
+element-text {
+    font:                        "Inter 24";
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
+element selected.normal {
+    border-color:                #EEEEEE;
+}

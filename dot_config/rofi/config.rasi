@@ -1,2 +1,2 @@
 
-@theme "/home/grsh/.local/share/rofi/theme.rasi"
+@theme ".config/rofi/themes/dmenu.rasi"
