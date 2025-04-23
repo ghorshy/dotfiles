@@ -16,7 +16,7 @@
 
     "custom/power_btn": {
         "format": "",
-        "on-click": "sh -c '(sleep 0.5s; wlogout --protocol layer-shell)' & disown",
+        "on-click": "~/.config/rofi/scripts/powermenu.sh",
         "tooltip": false,
         "cursor": false
     },
