@@ -59,6 +59,7 @@ packages=(
   discord
   kdeconnect
   godot-mono
+  npm
 )
 
 sudo pacman -Sy --noconfirm
@@ -84,7 +85,7 @@ if ! command -v yay &>/dev/null; then
   sudo pacman -Sy --needed --noconfirm git base-devel
   cd /tmp || exit
   git clone https://aur.archlinux.org/yay-git
-  cd yay || exit
+  cd yay-git || exit
   makepkg -si
 
   echo "yay installation complete."
