@@ -4,13 +4,13 @@ dir="$HOME/.config/rofi/themes"
 theme='powermenu'
 
 # Options
-shutdown=''
-reboot=''
-lock=''
-suspend=''
-logout=''
-yes=''
-no=''
+shutdown=''
+reboot=''
+lock=''
+suspend='󰏤'
+logout='󰗽'
+yes='Yes'
+no='No'
 
 rofi_cmd() {
   rofi -dmenu \

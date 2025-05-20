@@ -72,7 +72,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "Inter 24";
+    font:                        "Inter Nerd Font Propo 20";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;
