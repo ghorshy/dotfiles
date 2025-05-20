@@ -61,6 +61,7 @@ packages=(
   kdeconnect
   godot-mono
   npm
+  wtype
 )
 
 sudo pacman -Sy --noconfirm
@@ -79,6 +80,7 @@ aur=(
   zen-browser-bin
   bibata-cursor-theme-bin
   qimgv-git
+  nerd-fonts-inter
 )
 
 if ! command -v yay &>/dev/null; then
