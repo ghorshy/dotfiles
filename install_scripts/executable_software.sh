@@ -45,6 +45,7 @@ packages=(
   bluez-utils
   blueman
   udiskie
+  yazi
   #other
   code
   neovim
