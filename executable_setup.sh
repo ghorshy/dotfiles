@@ -10,6 +10,7 @@ packages=(
   ttf-font-awesome
   ttf-jetbrains-mono
   inter-font
+  noto-fonts-emoji
   # hypr
   hyprpaper
   hyprlock
