@@ -79,6 +79,19 @@ aur=(
   qimgv-git
 )
 
+if ! command -v yay &>/dev/null; then
+  echo "yay is not installed. Installing yay..."
+  sudo pacman -Sy --needed --noconfirm git base-devel
+  cd /tmp || exit
+  git clone https://aur.archlinux.org/yay-git
+  cd yay || exit
+  makepkg -si
+
+  echo "yay installation complete."
+else
+  echo "yay is already installed."
+fi
+
 echo "Installing AUR packages"
 for pkg in "${aur[@]}"; do
   echo "Installing $pkg..."
