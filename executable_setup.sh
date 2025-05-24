@@ -63,6 +63,8 @@ packages=(
   godot-mono
   npm
   wtype
+  snapper
+  snap-pac
 )
 
 sudo pacman -Sy --noconfirm
@@ -82,14 +84,16 @@ aur=(
   bibata-cursor-theme-bin
   qimgv-git
   nerd-fonts-inter
+  limine-mkinitcpio-hook
+  limine-snapper-sync
 )
 
 if ! command -v yay &>/dev/null; then
   echo "yay is not installed. Installing yay..."
   sudo pacman -Sy --needed --noconfirm git base-devel
   cd /tmp || exit
-  git clone https://aur.archlinux.org/yay-git
-  cd yay-git || exit
+  git clone https://aur.archlinux.org/yay.git
+  cd yay || exit
   makepkg -si
 
   echo "yay installation complete."
@@ -105,3 +109,6 @@ for pkg in "${aur[@]}"; do
   fi
   echo "[!] $pkg is already installed"
 done
+
+git clone https://github.com/LazyVim/starter ~/.config/nvim
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
