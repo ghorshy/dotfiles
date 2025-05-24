@@ -1,95 +1,100 @@
 * {
-    font-family: "Inter";
-    font-weight: 500;
-    font-size: 12px;
-    min-height: 0;
+  font-family: "Inter";
+  font-weight: 500;
+  font-size: 12px;
+  min-height: 0;
 }
 
 window#waybar {
-    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0, 0, 0, 0.4) 95%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.4) 95%, rgba(0, 0, 0, 0) 100%);
 }
 
 tooltip {
-    background: #212121;
-    opacity: 0.8;
-    border-radius: 4px;
+  background: #212121;
+  opacity: 0.8;
+  border-radius: 4px;
 }
 
-#window{
-    padding-left: 100px;
-    padding-right: 100px;
-    margin-top: 2px;
+#window {
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-top: 2px;
 }
 
 #battery:hover,
 #pulseaudio:hover,
-#tray > *:hover,
+#tray>*:hover,
 #custom-power_btn:hover,
-#clock:hover{
-    opacity: 0.5;
-    transition: opacity 0.2s ease;
+#clock:hover {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
 }
 
 #workspaces button {
-    margin-right: 5px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+  margin-right: 5px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-#workspaces button.active{
-    font-weight: bold;
-    background: #212121;
+#workspaces button.active {
+  font-weight: bold;
+  background: #212121;
 }
 
 #workspaces button.focused {
-    background: #eba0ac;
+  background: #eba0ac;
 }
 
 #workspaces button.urgent {
-    animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    20% {
-        background-color: rgba(33, 33, 33, 0);
-    }
-    40% {
-        background-color: rgba(189, 189, 189, 0.5);
-    }
-    90% {
-        background-color: rgba(33, 33, 33, 0);
-    }
+  20% {
+    background-color: rgba(33, 33, 33, 0);
+  }
+
+  40% {
+    background-color: rgba(189, 189, 189, 0.5);
+  }
+
+  90% {
+    background-color: rgba(33, 33, 33, 0);
+  }
 }
 
 #workspaces button:hover {
-    background: rgba(66, 66, 66, 0.3);
-    animation: none;
+  background: rgba(66, 66, 66, 0.3);
+  animation: none;
 }
 
-#workspaces{
-    padding-left: 8px;
+#workspaces {
+  padding-left: 8px;
 }
 
-#custom-power_btn, #network, #pulseaudio, #pulseaudio.microphone{
-    margin-left: 10px;
-    margin-right: 12px;
+#custom-power_btn,
+#network,
+#pulseaudio,
+#pulseaudio.microphone {
+  margin-left: 10px;
+  margin-right: 12px;
 }
 
-#tray{
-    margin-left: 10px;
-    margin-right: 6px;
+#tray {
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
 #temperature.critical {
-    color: #e92d4d;
+  color: #e92d4d;
 }
 
-#clock{
-    min-width: 36px;
-    margin-left: 10px;
-    padding-right: 6px;
+#clock {
+  min-width: 36px;
+  margin-left: 10px;
+  padding-right: 6px;
 }
 
-#custom-power_btn{
+#custom-power_btn {
   padding-right: 10px;
 }
