@@ -47,6 +47,7 @@ packages=(
   blueman
   udiskie
   yazi
+  wl-clipboard
   #other
   code
   neovim
