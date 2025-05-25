@@ -24,6 +24,7 @@ packages=(
   # qt
   qt5-wayland
   qt6-wayland
+  qt5ct
   # rofi
   rofi-wayland
   rofi-emoji
@@ -83,6 +84,7 @@ aur=(
   zen-browser-bin
   bibata-cursor-theme-bin
   qimgv-git
+  qt6ct-kde
   nerd-fonts-inter
   limine-mkinitcpio-hook
   limine-snapper-sync
@@ -112,3 +114,8 @@ done
 
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+
+cd /tmp || exit
+git clone https://github.com/vinceliuice/Graphite-kde-theme
+cd Graphite-kde-theme || exit
+sh install.sh -t default --rimless
