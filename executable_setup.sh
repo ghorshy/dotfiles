@@ -5,7 +5,6 @@ packages=(
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-theme-powerlevel10k-git
-  z
   # fonts
   ttf-font-awesome
   ttf-jetbrains-mono
@@ -66,6 +65,7 @@ packages=(
   wtype
   snapper
   snap-pac
+  zoxide
 )
 
 sudo pacman -Sy --noconfirm
