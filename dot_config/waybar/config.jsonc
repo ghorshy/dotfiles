@@ -17,8 +17,8 @@
     "custom/power_btn": {
         "format": "",
         "on-click": "~/.config/rofi/scripts/powermenu.sh",
-        "tooltip": false,
-        "cursor": false
+        "tooltip-format": "Power menu",
+        "cursor": 2
     },
 
     "hyprland/workspaces": {
@@ -96,7 +96,7 @@
             "default": ["", "", ""]
         },
         "tooltip-format": "{volume}%",
-        "cursor": false
+        "cursor": 2
     },
 
     "pulseaudio#microphone": {
@@ -105,11 +105,11 @@
         "format-source-muted": "",
         "on-click": "./scripts/volume --toggle-mic",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "~/.config/waybar/scripts/volume --mic-inc",
-        "on-scroll-down": "~/.config/waybar/scripts/volume --mic-dec",
+        "on-scroll-up": "~/.config/waybar/scripts/volume --inc-mic",
+        "on-scroll-down": "~/.config/waybar/scripts/volume --dec-mic",
         "scroll-step": 5,
         "tooltip-format": "{source_volume}%",
-        "cursor": false
+        "cursor": 2
     },
     
     "temperature": {
