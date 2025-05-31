@@ -83,8 +83,7 @@ tooltip {
 }
 
 #tray {
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-right: 8px;
 }
 
 #temperature.critical {
@@ -93,7 +92,7 @@ tooltip {
 
 #clock {
   min-width: 36px;
-  margin-left: 8px;
+  margin-left: 6px;
   padding-right: 6px;
   font-weight: 600;
 }
