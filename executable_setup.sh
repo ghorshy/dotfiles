@@ -33,7 +33,7 @@ packages=(
   nwg-look
   dunst
   papirus-icon-theme
-  # utils
+  # other
   lazygit
   fastfetch
   btop
@@ -48,7 +48,6 @@ packages=(
   udiskie
   yazi
   wl-clipboard
-  #other
   code
   neovim
   yt-dlp
@@ -66,6 +65,7 @@ packages=(
   snapper
   snap-pac
   zoxide
+  fzf
 )
 
 sudo pacman -Sy --noconfirm
@@ -119,3 +119,10 @@ cd /tmp || exit
 git clone https://github.com/vinceliuice/Graphite-kde-theme
 cd Graphite-kde-theme || exit
 sh install.sh -t default --rimless
+
+# Bluetooth
+rfkill unblock bluetooth
+
+# Services
+systemctl enable bluetooth.service
+systemctl enable --now limine-snapper-sync.service
