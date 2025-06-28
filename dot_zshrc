@@ -28,6 +28,7 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 alias ll="eza -al"
 alias cls="clear"
+alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
 
 bindkey "^[[H" beginning-of-line
 bindkey "^[[3~" delete-char
