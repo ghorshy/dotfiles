@@ -66,6 +66,7 @@ packages=(
   snap-pac
   zoxide
   fzf
+  bat
 )
 
 sudo pacman -Sy --noconfirm
