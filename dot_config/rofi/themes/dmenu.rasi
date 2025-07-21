@@ -29,6 +29,8 @@ window {
     location:       center;
     width:          640;
     border-radius:  4;
+    border:         1px solid;
+    border-color:   #595959;
 }
 
 inputbar {

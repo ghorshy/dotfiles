@@ -1,21 +1,22 @@
 configuration {
-    show-icons:                 false;
-    hover-select:               true;
-    me-select-entry:            "";
-    me-accept-entry:            "MousePrimary";
+    show-icons:                  false;
+    hover-select:                true;
+    me-select-entry:             "";
+    me-accept-entry:             "MousePrimary";
 
 }
 
 * {
   font: "Inter 10";
 }
+
 window {
     transparency:                "real";
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
     width:                       500px;
-    font: "Inter";
+    font:                        "Inter";
     enabled:                     true;
     cursor:                      "default";
     background-color:            transparent;
