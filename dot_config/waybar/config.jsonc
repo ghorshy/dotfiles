@@ -1,10 +1,10 @@
 {
+    "reload_style_on_change": true,
     "layer": "top",
     "position": "top",
     "mod": "dock",
     "exclusive": true,
     "passthrough": false,
-    "gtk-layer-shell": true,
     "height": 32,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
@@ -24,18 +24,6 @@
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
-        }
     },
 
     "tray": {
@@ -47,7 +35,7 @@
     "clock": {
         "format": "{:%H:%M}",
         "tooltip": true,
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "{:%A, %e %B %Y}",
         "calendar": {
             "format": {
                 "today": "<span color='#81d4fa'>{}</span>"
@@ -68,36 +56,20 @@
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
-    
-    // "network": {
-    //     // "interface": "wlp2*", // (Optional) To force the use of this interface
-    //     "format-wifi": "",
-    //     "format-ethernet": "",
-    //     "tooltip-format": "{ifname} via {gwaddr} ",
-    //     "format-linked": "{ifname} (No IP) ",
-    //     "format-disconnected": "⚠",
-    //     "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    // },
-
     "pulseaudio": {
         "format": "{icon}",
-        "format-muted": "",
+        "format-muted": "󰝟",
         "on-click": "~/.config/waybar/scripts/volume --toggle-vol",
         "on-click-right": "pavucontrol",
         "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
         "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
         "scroll-step": 5,
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
             "default": ["", "", ""]
         },
         "tooltip-format": "{volume}%",
-        "cursor": 2
+        "cursor": 2,
+        "icon-size": 14
     },
 
     "pulseaudio#microphone": {
@@ -106,18 +78,8 @@
         "format-source-muted": "",
         "on-click": "./scripts/volume --toggle-mic",
         "on-click-right": "pavucontrol",
-        "on-scroll-up": "~/.config/waybar/scripts/volume --inc-mic",
-        "on-scroll-down": "~/.config/waybar/scripts/volume --dec-mic",
         "scroll-step": 5,
         "tooltip-format": "{source_volume}%",
         "cursor": 2
     },
-    
-    "temperature": {
-        "thermal-zone": 1,
-        "format": " {temperatureC}°C",
-        "critical-threshold": 70,
-        "format-critical": " {temperatureC}°C",
-        "on-click": "kitty --start-as=fullscreen --title btop sh -c 'btop'"
-    }
 }

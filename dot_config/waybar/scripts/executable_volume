@@ -12,16 +12,10 @@ toggle_vol() {
   pamixer -t
 }
 
-inc_mic() {
-  pamixer
-}
-
 if [[ "$1" == "--inc" ]]; then
   inc_vol
 elif [[ "$1" == "--dec" ]]; then
   dec_vol
 elif [[ "$1" == "--toggle-vol" ]]; then
   toggle_vol
-elif [[ "$1" == "--inc-mic" ]]; then
-  inc_mic
 fi
