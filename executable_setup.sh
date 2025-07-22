@@ -31,7 +31,7 @@ packages=(
   #looks
   waybar
   nwg-look
-  dunst
+  mako
   papirus-icon-theme
   # other
   lazygit
