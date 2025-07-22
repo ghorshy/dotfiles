@@ -72,17 +72,19 @@ tooltip {
 }
 
 #tray {
-  padding-right: 8px;
+  padding-right: 10px;
 }
 
 #clock {
-  min-width: 44px;
+  min-width: 64px;
+  margin-left: -8px;
   font-weight: 600;
 }
 
 #custom-power_btn {
-  padding-left: 8px;
-  padding-right: 16px;
+  min-width: 24px;
+  margin-left: 2px;
+  margin-right: 8px;
 }
 
 #workspaces button:hover {

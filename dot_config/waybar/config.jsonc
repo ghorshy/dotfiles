@@ -8,7 +8,7 @@
     "height": 32,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["tray","battery","pulseaudio","pulseaudio#microphone","clock","custom/power_btn"],
+    "modules-right": ["tray","battery","pulseaudio","pulseaudio#microphone","clock"],
 
     "hyprland/window": {
         "format": "{}"
@@ -27,7 +27,7 @@
     },
 
     "tray": {
-        "icon-size": 14,
+        "icon-size": 16,
         "spacing": 16,
         "reverse-direction": true
     },
@@ -69,7 +69,7 @@
         },
         "tooltip-format": "{volume}%",
         "cursor": 2,
-        "icon-size": 14
+        "icon-size": 16
     },
 
     "pulseaudio#microphone": {
