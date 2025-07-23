@@ -25,11 +25,11 @@ tooltip {
 #workspaces button {
   margin-right: 3px;
   border-radius: 4px;
-  transition: background-color 0.3s ease;
   margin-top: 4px;
   margin-bottom: 4px;
   font-weight: 400;
   padding: 0 5px 0 5px;
+  transition: background 0.3s ease;
 }
 
 #workspaces button.active {
@@ -89,7 +89,10 @@ tooltip {
 
 #workspaces button:hover {
   background: rgba(66, 66, 66, 0.3);
-  animation: none;
+
+}
+#workspaces button.active:hover{
+  background: rgba(66, 66, 66, 1);
 }
 
 #battery:hover,
@@ -97,6 +100,6 @@ tooltip {
 #tray>*:hover,
 #custom-power_btn:hover,
 #clock:hover {
-  opacity: 0.5;
+  opacity: 0.7;
   transition: opacity 0.2s ease;
 }
