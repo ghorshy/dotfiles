@@ -9,8 +9,8 @@ reboot=''
 lock=''
 suspend='󰏤'
 logout='󰗽'
-yes='Yes'
-no='No'
+yes='󰸞'
+no=''
 
 rofi_cmd() {
   rofi -dmenu \
