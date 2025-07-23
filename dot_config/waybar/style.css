@@ -91,7 +91,8 @@ tooltip {
   background: rgba(66, 66, 66, 0.3);
 
 }
-#workspaces button.active:hover{
+
+#workspaces button.active:hover {
   background: rgba(66, 66, 66, 1);
 }
 
