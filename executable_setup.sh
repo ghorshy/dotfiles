@@ -1,4 +1,7 @@
 #!/bin/bash
+
+# TODO: like in Omarchy make auto-login and a Plymouth theme
+
 packages=(
   # zsh
   zsh
@@ -116,17 +119,27 @@ done
 git clone https://github.com/LazyVim/starter ~/.config/nvim
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 
-# KDE theme
-cd /tmp || exit
-git clone https://github.com/vinceliuice/Graphite-kde-theme
-cd Graphite-kde-theme || exit
-sh install.sh -t default --rimless
+KDE_THEME_DIR="$HOME/.local/share/plasma/desktoptheme/Graphite"
+if [ -d "$KDE_THEME_DIR" ]; then
+  echo "[!] KDE theme already installed"
+else
+  echo "--- Installing KDE theme"
+  cd /tmp || exit
+  git clone https://github.com/vinceliuice/Graphite-kde-theme
+  cd Graphite-kde-theme || exit
+  sh install.sh -t default --rimless
+fi
 
-# GTK theme
-cd /tmp || exit
-git clone https://github.com/ghorshy/Graphite-gtk-theme
-cd Graphite-gtk-theme || exit
-sh install.sh -t default -c dark -s compact --tweaks rimless --round 4px
+GTK_THEME_DIR="$HOME/.local/share/themes/Graphite-Dark-compact/"
+if [ -d "$GTK_THEME_DIR" ]; then
+  echo "[!] GTK theme already installed"
+else
+  echo "--- Installing GTK theme ---"
+  cd /tmp || exit
+  git clone https://github.com/ghorshy/Graphite-gtk-theme
+  cd Graphite-gtk-theme || exit
+  sh install.sh -t default -c dark -s compact --tweaks rimless --round 4px
+fi
 
 # Bluetooth
 rfkill unblock bluetooth
