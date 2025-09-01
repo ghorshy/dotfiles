@@ -2,74 +2,109 @@
 
 # TODO: like in Omarchy make auto-login and a Plymouth theme
 
-packages=(
-  # zsh
+# Shell & Terminal Tools
+packages+=(
   zsh
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-theme-powerlevel10k-git
-  # fonts
-  ttf-font-awesome
-  ttf-jetbrains-mono
+  zoxide
+  eza
+  bat
+  fastfetch
+  lazygit
+  btop
+  fzf
+  unzip
+  unrar
+  wl-clipboard
+  wtype
+)
+
+# Fonts
+packages+=(
   inter-font
   noto-fonts-emoji
-  # hypr
-  hyprpaper
-  hyprlock
+  ttf-font-awesome
+  ttf-jetbrains-mono
+)
+
+# Wayland / Hyprland
+packages+=(
   hypridle
+  hyprlock
+  hyprpaper
   xdg-desktop-portal-hyprland
-  # thunar
+  qt5-wayland
+  qt6-wayland
+  qt5ct
+)
+
+# File Management
+packages+=(
   thunar
   thunar-archive-plugin
   thunar-volman
   engrampa
-  # qt
-  qt5-wayland
-  qt6-wayland
-  qt5ct
-  # rofi
-  rofi-wayland
-  rofi-emoji
-  rofi-calc
-  #looks
+  udiskie
+  yazi
+)
+
+# UI / UX / Looks
+packages+=(
   waybar
   nwg-look
   mako
   papirus-icon-theme
-  # other
-  lazygit
-  fastfetch
-  btop
-  unzip
-  unrar
+)
+
+# App Launchers (Rofi)
+packages+=(
+  rofi-wayland
+  rofi-emoji
+  rofi-calc
+)
+
+# Development Tools
+packages+=(
   chezmoi
-  eza
-  pavucontrol
-  pamixer
-  bluez-utils
-  blueman
-  udiskie
-  yazi
-  wl-clipboard
-  code
   neovim
-  yt-dlp
-  keepassxc
-  obs-studio
-  steam
+  code
   dotnet-sdk
   dotnet-runtime
   aspnet-runtime
-  discord
-  kdeconnect
   godot-mono
   npm
-  wtype
+)
+
+# Media / Utilities
+packages+=(
+  yt-dlp
+  obs-studio
+  keepassxc
+  kdeconnect
+  pavucontrol
+  pamixer
+  blueman
+)
+
+# Gaming
+packages+=(
+  steam
+  discord
+)
+
+# Remote Work / VPN
+packages+=(
+  freerdp
+  remmina
+  networkmanager-openconnect
+)
+
+# System Tools
+packages+=(
   snapper
   snap-pac
-  zoxide
-  fzf
-  bat
 )
 
 sudo pacman -Sy --noconfirm
@@ -84,7 +119,7 @@ for pkg in "${packages[@]}"; do
 done
 
 aur=(
-  hyprshot
+  hyprshot # better change it to grim + slurp
   zen-browser-bin
   bibata-cursor-theme-bin
   qimgv-git
