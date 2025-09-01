@@ -119,7 +119,6 @@ for pkg in "${packages[@]}"; do
 done
 
 aur=(
-  hyprshot # better change it to grim + slurp
   zen-browser-bin
   bibata-cursor-theme-bin
   qimgv-git
