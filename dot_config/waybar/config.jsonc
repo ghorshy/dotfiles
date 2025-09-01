@@ -39,8 +39,10 @@
         "calendar": {
             "format": {
                 "today": "<span color='#81d4fa'>{}</span>"
-            }
-        }
+            },
+        },
+        "on-click": "gnome-calendar",
+        "cursor": 2
     },
 
     "battery": {
