@@ -135,8 +135,12 @@ ColorScheme=GraphiteDark
 Name=GraphiteDark
 shadeSortColumn=true
 
+[Icons]
+Theme=Papirus-Dark
+
 [KDE]
 contrast=4
+widgetStyle=qt6ct-style
 
 [KFileDialog Settings]
 Allow Expansion=false
