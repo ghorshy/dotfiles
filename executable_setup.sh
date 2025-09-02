@@ -86,6 +86,8 @@ packages+=(
   pavucontrol
   pamixer
   blueman
+  grim
+  slurp
 )
 
 # Gaming
