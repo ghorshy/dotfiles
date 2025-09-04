@@ -172,7 +172,7 @@ if [ -d "$GTK_THEME_DIR" ]; then
 else
   echo "--- Installing GTK theme ---"
   cd /tmp || exit
-  git clone https://github.com/ghorshy/Graphite-gtk-theme
+  git clone https://github.com/vinceliuice/Graphite-gtk-theme
   cd Graphite-gtk-theme || exit
   sh install.sh -t default -c dark -s compact --tweaks rimless --round 4px
 fi
