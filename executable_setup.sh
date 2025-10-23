@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# TODO: like in Omarchy make auto-login and a Plymouth theme
-
 # Shell & Terminal Tools
 packages+=(
   zsh
@@ -60,7 +58,7 @@ packages+=(
 
 # App Launchers (Rofi)
 packages+=(
-  rofi-wayland
+  rofi
   rofi-emoji
   rofi-calc
 )
@@ -185,3 +183,5 @@ systemctl enable bluetooth.service
 systemctl enable --now limine-snapper-sync.service
 
 hyprpm update
+hyprpm add https://github.com/shezdy/hyprsplit
+hyprpm enable hyprsplit
