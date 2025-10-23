@@ -183,3 +183,5 @@ rfkill unblock bluetooth
 # Services
 systemctl enable bluetooth.service
 systemctl enable --now limine-snapper-sync.service
+
+hyprpm update

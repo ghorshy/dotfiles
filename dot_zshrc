@@ -21,12 +21,16 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 export EDITOR="nvim"
 export SUDO_EDITOR="$EDITOR"
+export TERMINAL="kitty"
+export PATH="$PATH:$HOME/go/bin"
+
 
 alias ll="eza -al"
 alias ls="eza -lh --group-directories-first --icons=auto"
 alias cls="clear"
 alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
+alias vim="nvim"
 
 bindkey "^[[H" beginning-of-line
 bindkey "^[[3~" delete-char
@@ -35,4 +39,5 @@ bindkey "\e[1;5D" backward-word
 bindkey "\e[1;5C" forward-word
 bindkey "^[[3;5~" kill-word
 bindkey "^H" backward-kill-word
+
 
