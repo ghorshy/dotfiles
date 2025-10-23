@@ -12,10 +12,16 @@ toggle_vol() {
   pamixer -t
 }
 
+toggle_mic() {
+  pamixer --source alsa_input.usb-MICE_MICROPHONE_USB_MICROPHONE_201308-00.mono-fallback -t
+}
+
 if [[ "$1" == "--inc" ]]; then
   inc_vol
 elif [[ "$1" == "--dec" ]]; then
   dec_vol
 elif [[ "$1" == "--toggle-vol" ]]; then
   toggle_vol
+elif [[ "$1" == "--toggle-mic" ]]; then
+  toggle_mic
 fi
