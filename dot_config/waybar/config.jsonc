@@ -1,90 +1,118 @@
 {
-    "reload_style_on_change": true,
-    "layer": "top",
-    "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "height": 32,
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["tray","battery","pulseaudio","pulseaudio#microphone","clock"],
-
-    "hyprland/window": {
-        "format": "{}"
+  "reload_style_on_change": true,
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "height": 32,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    "battery",
+    "pulseaudio",
+    "pulseaudio#microphone",
+    "clock"
+  ],
+  "hyprland/window": {
+    "format": "{}"
+  },
+  "custom/power_btn": {
+    "format": "",
+    "on-click": "~/.config/rofi/scripts/powermenu.sh",
+    "tooltip-format": "Power menu",
+    "cursor": 2
+  },
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "disable-scroll": true,
+    "all-outputs": false,
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "1",
+      "7": "2",
+      "8": "3",
+      "9": "4",
+      "10": "5"
+    }
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 16,
+    "reverse-direction": true
+  },
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip": true,
+    "tooltip-format": "{:%A, %e %B %Y}",
+    "calendar": {
+      "format": {
+        "today": "<span color='#81d4fa'>{}</span>"
+      }
     },
-
-    "custom/power_btn": {
-        "format": "",
-        "on-click": "~/.config/rofi/scripts/powermenu.sh",
-        "tooltip-format": "Power menu",
-        "cursor": 2
+    "on-click": "gnome-calendar",
+    "cursor": 2
+  },
+  "battery": {
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 20
     },
-
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "persistent-workspaces": {
-            "*": [ 1, 2, 3, 4, 5 ]
-        }
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": " {capacity}%",
+    "format-alt": "{time} {icon}",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰁹"
+    ]
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-muted": "󰝟",
+    "on-click": "~/.config/waybar/scripts/volume --toggle-vol",
+    "on-click-right": "pavucontrol",
+    "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
+    "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
+    "scroll-step": 5,
+    "format-icons": {
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
-
-    "tray": {
-        "icon-size": 16,
-        "spacing": 16,
-        "reverse-direction": true
-    },
-
-    "clock": {
-        "format": "{:%H:%M}",
-        "tooltip": true,
-        "tooltip-format": "{:%A, %e %B %Y}",
-        "calendar": {
-            "format": {
-                "today": "<span color='#81d4fa'>{}</span>"
-            },
-        },
-        "on-click": "gnome-calendar",
-        "cursor": 2
-    },
-
-    "battery": {
-        "states": {
-            "good": 80,
-            "warning": 30,
-            "critical": 20
-        },
-        "format": "{icon} {capacity}%",
-        "format-charging": " {capacity}%",
-        "format-plugged": " {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
-    },
-
-    "pulseaudio": {
-        "format": "{icon}",
-        "format-muted": "󰝟",
-        "on-click": "~/.config/waybar/scripts/volume --toggle-vol",
-        "on-click-right": "pavucontrol",
-        "on-scroll-up": "~/.config/waybar/scripts/volume --inc",
-        "on-scroll-down": "~/.config/waybar/scripts/volume --dec",
-        "scroll-step": 5,
-        "format-icons": {
-            "default": ["", "", ""]
-        },
-        "tooltip-format": "{volume}%",
-        "cursor": 2,
-        "icon-size": 16
-    },
-
-    "pulseaudio#microphone": {
-        "format": "{format_source}",
-        "format-source": "",
-        "format-source-muted": "",
-        "on-click": "./scripts/volume --toggle-mic",
-        "on-click-right": "pavucontrol",
-        "scroll-step": 5,
-        "tooltip-format": "{source_volume}%",
-        "cursor": 2
-    },
+    "tooltip-format": "{volume}%",
+    "cursor": 2,
+    "icon-size": 16
+  },
+  "pulseaudio#microphone": {
+    "format": "{format_source}",
+    "format-source": "",
+    "format-source-muted": "",
+    "on-click": "./scripts/volume --toggle-mic",
+    "on-click-right": "pavucontrol",
+    "scroll-step": 5,
+    "tooltip-format": "{source_volume}%",
+    "cursor": 2
+  }
 }
