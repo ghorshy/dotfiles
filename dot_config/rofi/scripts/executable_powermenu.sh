@@ -49,7 +49,7 @@ run_cmd() {
     elif [[ $1 == '--suspend' ]]; then
       mpc -q pause
       amixer set Master mute
-      hyprlock &
+      hyprlock --display DP-2 &
       sleep 0.2
       systemctl suspend
     elif [[ $1 == '--logout' ]]; then
