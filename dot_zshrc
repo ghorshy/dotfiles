@@ -33,13 +33,29 @@ alias ff="fzf --preview 'bat --style=numbers --color=always {}'"
 alias yayf="yay -Slq | fzf --multi --preview 'yay -Sii {1}' --preview-window=down:75% | xargs -ro yay -S"
 alias vim="nvim"
 
+backward-kill-to-slash() {
+  local buffer=$BUFFER
+  local cursor=$CURSOR
+  local left=${buffer[1,cursor]}
+  local right=${buffer[cursor+1,-1]}
+
+  if [[ $left == */* ]]; then
+    BUFFER="${left%/*}/${right}"
+    CURSOR=${#${left%/*}}+1
+  else
+    BUFFER="$right"
+    CURSOR=0
+  fi
+}
+
+zle -N backward-kill-to-slash
+bindkey '^H' backward-kill-to-slash
 bindkey "^[[H" beginning-of-line
 bindkey "^[[3~" delete-char
 bindkey "^[[F" end-of-line
 bindkey "\e[1;5D" backward-word
 bindkey "\e[1;5C" forward-word
 bindkey "^[[3;5~" kill-word
-bindkey "^H" backward-kill-word
 
 
 export PATH="$HOME/.local/bin:$PATH"
