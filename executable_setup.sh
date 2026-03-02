@@ -99,6 +99,7 @@ packages+=(
   freerdp
   remmina
   networkmanager-openconnect
+  network-manager-applet
 )
 
 # System Tools

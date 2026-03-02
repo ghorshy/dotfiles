@@ -71,6 +71,12 @@ tooltip {
   min-width: 16px;
 }
 
+#battery{
+  padding-right: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
 #tray {
   padding-right: 10px;
 }
