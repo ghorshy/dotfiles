@@ -13,8 +13,8 @@
     "hyprland/window"
   ],
   "modules-right": [
-    "tray",
     "battery",
+    "tray",
     "pulseaudio",
     "pulseaudio#microphone",
     "clock"
