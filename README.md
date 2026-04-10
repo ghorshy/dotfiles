@@ -31,9 +31,11 @@ Simply use
 chezmoi init https://github.com/ghorshy/dotfiles.git
 ```
 
-and then run the install script to install my favorite hand-picked programs that work best with my workflow
+and then run the install script to install some useful packages
 
 **BE SURE TO CHECK WHAT'S INSIDE, FEEL FREE TO ADJUST IT FOR YOUR OWN NEEDS**
 ```bash
-./install.sh
+./setup.sh
 ```
+
+**Also don't forget to set up your displays in ```~/.config/hypr/hyprland.conf```**
