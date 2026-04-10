@@ -7,9 +7,9 @@ ask() {
   while true; do
     read -rp "$prompt [y/n]: " yn
     case "$yn" in
-      [Yy]*) return 0 ;;
-      [Nn]*) return 1 ;;
-      *) echo "Please answer y or n." ;;
+    [Yy]*) return 0 ;;
+    [Nn]*) return 1 ;;
+    *) echo "Please answer y or n." ;;
     esac
   done
 }
@@ -140,7 +140,7 @@ if ask "Install dotnet development tools (dotnet-sdk, code, npm)"; then
     dotnet-sdk \
     dotnet-runtime \
     aspnet-runtime \
-    code \
+    zed \
     npm
 fi
 
