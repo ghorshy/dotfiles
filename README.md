@@ -1,41 +1,41 @@
 # Dotfiles
 
-My personal config.
-This repo contains all the scripts, configs, and tweaks.
-Only tested with **Arch Linux** (should also work with any of it's deriatives).
+My personal configuration for a Hyprland-based Arch Linux desktop.
+Only tested on **Arch Linux** and its derivatives.
 
-## What’s Inside
+## What's Inside
 
-A collection of configuration files for:
-- **hyprland** window manager
-- **waybar**
-- **mako** notification daemon
-- **kitty** terminal
-- **zsh** shell with **powerlevel10k** theme
-- **neovim** with **LazyVim** config
-- **rofi** app launcher
-- **Thunar** file manager
-- **Limine** bootloader with Snapper snapshots for btrfs
-- beautiful **KDE** and **GTK** theme by vinceliuice
-- automatic USB mount with **udiskie**
-- **Bluetooth** support with **blueman**
-- **hyprsplit** plugin for dwm-like workspaces
+| Category | Tools |
+|---|---|
+| **Window Manager** | [Hyprland](https://github.com/hyprwm/Hyprland), [hyprlock](https://github.com/hyprwm/hyprlock), [hypridle](https://github.com/hyprwm/hypridle), [hyprpaper](https://github.com/hyprwm/hyprpaper) |
+| **Bar & Notifications** | [waybar](https://github.com/Alexays/Waybar), [mako](https://github.com/emersion/mako) |
+| **App Launcher** | [rofi](https://github.com/davatorium/rofi) with emoji and calc plugins |
+| **Terminal** | [kitty](https://github.com/kovidgoyal/kitty) |
+| **Shell** | [zsh](https://www.zsh.org) with [powerlevel10k](https://github.com/romkatv/powerlevel10k), [zoxide](https://github.com/ajeetdsouza/zoxide), [eza](https://github.com/eza-community/eza), [bat](https://github.com/sharkdp/bat), [fzf](https://github.com/junegunn/fzf), [fastfetch](https://github.com/fastfetch-cli/fastfetch), [lazygit](https://github.com/jesseduffield/lazygit), [btop](https://github.com/aristocratos/btop) |
+| **Editor** | [neovim](https://github.com/neovim/neovim) with [LazyVim](https://github.com/LazyVim/LazyVim) |
+| **File Managers** | [Thunar](https://gitlab.xfce.org/xfce/thunar), [yazi](https://github.com/sxyazi/yazi) |
+| **Image Viewer** | [qimgv](https://github.com/easymodo/qimgv) |
+| **Theme** | Graphite [KDE](https://github.com/vinceliuice/Graphite-kde-theme) & [GTK](https://github.com/vinceliuice/Graphite-gtk-theme) theme by [vinceliuice](https://github.com/vinceliuice), [Bibata](https://github.com/ful1e5/Bibata_Cursor) cursor, [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) icons |
+| **Bluetooth & USB** | [blueman](https://github.com/blueman-project/blueman), [udiskie](https://github.com/coldfix/udiskie) |
+| **Bootloader** | [Limine](https://github.com/limine-bootloader/limine) with [Snapper](https://github.com/openSUSE/snapper) for btrfs snapshots, [limine-snapper-sync](https://gitlab.com/Zesko/limine-snapper-sync) for automatic boot entry sync |
+| **Dev Tools** | dotnet SDK, Zed, npm, [Godot](https://github.com/godotengine/godot) |
+| **Apps** | KeePassXC, KDE Connect, OBS, Steam, Discord, Zen Browser, yt-dlp |
 
 ## Installation
 
-This repo uses **chezmoi** as dotfile manager.
+This repo uses **chezmoi** as the dotfile manager.
 
-Simply use
-
+**1. Initialize and apply dotfiles:**
 ```bash
 chezmoi init https://github.com/ghorshy/dotfiles.git
+chezmoi apply
 ```
 
-and then run the install script to install some useful packages
-
-**BE SURE TO CHECK WHAT'S INSIDE, FEEL FREE TO ADJUST IT FOR YOUR OWN NEEDS**
+**2. Run the install script** to set up packages (interactive — each section is opt-in):
 ```bash
-./setup.sh
+~/.local/share/chezmoi/setup.sh
 ```
 
-**Also don't forget to set up your displays in ```~/.config/hypr/hyprland.conf```**
+> **Check the script before running it** and adjust it to your needs.
+
+**3. Set up your displays** in `~/.config/hypr/hyprland.conf`.
