@@ -33,7 +33,7 @@ chezmoi apply
 
 **2. Run the install script** to set up packages (interactive — each section is opt-in):
 ```bash
-~/.local/share/chezmoi/setup.sh
+~/setup.sh
 ```
 
 > **Check the script before running it** and adjust it to your needs.
