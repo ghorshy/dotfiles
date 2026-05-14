@@ -38,4 +38,4 @@ chezmoi apply
 
 > **Check the script before running it** and adjust it to your needs.
 
-**3. Set up your displays** in `~/.config/hypr/hyprland.conf`.
+**3. Set up your displays** in `~/.config/hypr/monitors.lua`.
