@@ -1,0 +1,7 @@
+return {
+	terminal = "kitty",
+	fileManager = "thunar",
+	menu = "rofi -show drun",
+	powermenu = "~/.config/rofi/scripts/powermenu.sh",
+	editor = "nvim",
+}
