@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# TODO: like in Omarchy make auto-login and a Plymouth theme
+if [ "$EUID" -eq 0 ]; then
+  echo "Do not run this script as root. Run as a regular user."
+  exit 1
+fi
 
 ask() {
   local prompt="$1"
@@ -54,6 +57,9 @@ sudo pacman -Sy --noconfirm
 # ─── 1. Hyprland packages ─────────────────────────────────────────────────────
 if ask "Install Hyprland UI packages (waybar, mako, rofi, fonts, grim, slurp, etc.)"; then
   install_pacman \
+    hyprland \
+    networkmanager network-manager-applet \
+    kitty \
     hypridle hyprlock hyprpaper \
     xdg-desktop-portal-hyprland \
     qt5-wayland qt6-wayland qt5ct \
@@ -94,6 +100,8 @@ if ask "Install ZSH and shell tools (zsh, p10k, fzf, eza, bat, etc.)"; then
   else
     echo "[!] powerlevel10k already cloned"
   fi
+
+  chsh -s "$(which zsh)"
 fi
 
 # ─── 3. Limine & Snapper ──────────────────────────────────────────────────────
@@ -132,6 +140,8 @@ if ask "Install Graphite KDE and GTK themes"; then
     cd Graphite-gtk-theme || exit
     sh install.sh -t default -c dark -s compact --tweaks rimless --round 4px
   fi
+
+  nwg-look -a
 fi
 
 # ─── 5. Dotnet development ────────────────────────────────────────────────────
@@ -179,4 +189,15 @@ fi
 # ─── System ───────────────────────────────────────────────────────────────────
 rfkill unblock bluetooth
 systemctl enable bluetooth.service
+systemctl enable --now NetworkManager.service
+
 hyprpm update
+if [ ! -d "$HOME/.config/hypr/plugins/split-monitor-workspaces" ]; then
+  mkdir -p ~/.config/hypr/plugins
+  git clone https://github.com/zjeffer/split-monitor-workspaces ~/.config/hypr/plugins/split-monitor-workspaces
+else
+  echo "[!] split-monitor-workspaces already cloned"
+fi
+
+echo "--- Detected monitors (configure in hyprland.conf) ---"
+hyprctl monitors 2>/dev/null || echo "(run 'hyprctl monitors' inside a Hyprland session to see monitor list)"
