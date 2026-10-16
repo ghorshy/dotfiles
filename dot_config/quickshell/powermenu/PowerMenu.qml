@@ -127,6 +127,7 @@ Scope {
                 text: "Are you sure?"
                 color: Theme.text
                 font.family: Theme.fontUi
+                font.weight: Theme.fontWeight
                 font.pointSize: Theme.fontSize
             }
 
@@ -156,6 +157,8 @@ Scope {
                             text: button.modelData.icon
                             color: Theme.text
                             font.family: Theme.fontIcons
+                            font.weight: Theme.fontWeight
+                            font.styleName: "Medium"
                             font.pointSize: 20
                         }
 

@@ -10,7 +10,7 @@ MouseArea {
     property int padLeft: 0
     property int padRight: 0
     property int minWidth: 0
-    property int weight: Font.Normal
+    property int weight: Theme.fontWeight
     property real fontSize: Theme.fontSize
     property bool clickable: true
     property bool dim: false
@@ -37,7 +37,7 @@ MouseArea {
         x: root.padLeft + (root.width - root.padLeft - root.padRight - width) / 2
         text: root.text
         color: root.dim ? Theme.textFaint : Theme.text
-        font.family: Theme.fontIcons
+        font.family: Theme.fontUi // icons fall back to Theme.fontIcons
         font.pointSize: root.fontSize
         font.weight: root.weight
     }

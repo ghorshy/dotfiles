@@ -122,6 +122,8 @@ Scope {
                     text: root.icon
                     color: Theme.text
                     font.family: Theme.fontIcons
+                    font.weight: Theme.fontWeight
+                    font.styleName: "Medium"
                     font.pointSize: Theme.fontSizeLarge
                 }
 

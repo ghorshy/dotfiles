@@ -20,6 +20,7 @@ Singleton {
     readonly property string fontUi: "{{ .fonts.ui }}"
     readonly property string fontIcons: "{{ .fonts.icons }}"
     readonly property string fontMono: "{{ .fonts.mono }}"
+    readonly property int fontWeight: Font.{{ .fonts.appWeight }} // default text weight, same as Qt and GTK apps
     readonly property real fontSize: {{ .fonts.size }} // pt
     readonly property real fontSizeLarge: {{ .fonts.sizeLarge }} // pt
 

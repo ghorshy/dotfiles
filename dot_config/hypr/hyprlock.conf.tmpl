@@ -11,7 +11,7 @@ background {
 # USER NAME
 label {
     monitor = {{ $host.lockMonitor }}
-    font_family = {{ .fonts.ui }}
+    font_family = {{ .fonts.ui }} {{ .fonts.appWeight }}
     text = $USER
 
     position = 0, 24
@@ -23,7 +23,7 @@ label {
 # TIME
 label {
     monitor = {{ $host.lockMonitor }}
-    font_family = {{ .fonts.ui }} Medium
+    font_family = {{ .fonts.ui }} {{ .fonts.appWeight }}
     font_size = 56
 
     text = $TIME
@@ -37,7 +37,7 @@ label {
 label {
     monitor = {{ $host.lockMonitor }}
     text = cmd[update] echo -e "$(date +"%A, %d %B %Y")"
-    font_family = {{ .fonts.ui }}
+    font_family = {{ .fonts.ui }} {{ .fonts.appWeight }}
     font_size = 12
 
     position = 0, 172
@@ -58,7 +58,7 @@ input-field {
     fail_color = rgba({{ .colors.urgent }}{{ template "alpha" .opacity.popup }})
     capslock_color = rgba({{ .colors.warning }}{{ template "alpha" .opacity.popup }})
 
-    font_family = {{ .fonts.ui }}
+    font_family = {{ .fonts.ui }} {{ .fonts.appWeight }}
     font_color = rgb({{ .colors.textFaint }})
     fade_on_empty = false
     rounding = {{ .ui.radius }}

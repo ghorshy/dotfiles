@@ -124,6 +124,7 @@ BarPopup {
                             color: Theme.text
                             selectionColor: Theme.overlay
                             font.family: Theme.fontUi
+                            font.weight: Theme.fontWeight
                             font.pointSize: Theme.fontSize
                             onAccepted: {
                                 entry.modelData.connectWithPsk(text);

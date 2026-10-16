@@ -73,6 +73,7 @@ BarPopup {
                 text: `${popup.locale.standaloneMonthName(popup.month)} ${popup.year}`
                 color: Theme.text
                 font.family: Theme.fontUi
+                font.weight: Theme.fontWeight
                 font.pointSize: Theme.fontSize
                 font.capitalization: Font.Capitalize
             }
@@ -103,6 +104,7 @@ BarPopup {
                 text: popup.locale.dayName((popup.locale.firstDayOfWeek + index) % 7, Locale.ShortFormat).replace(".", "").slice(0, 3)
                 color: Theme.textFaint
                 font.family: Theme.fontUi
+                font.weight: Theme.fontWeight
                 font.pointSize: Theme.fontSize - 1
                 font.capitalization: Font.Capitalize
             }
@@ -129,7 +131,7 @@ BarPopup {
                     color: parent.inMonth ? Theme.text : Theme.textFaint
                     font.family: Theme.fontUi
                     font.pointSize: Theme.fontSize
-                    font.weight: parent.isToday ? Font.DemiBold : Font.Normal
+                    font.weight: parent.isToday ? Font.DemiBold : Theme.fontWeight
                 }
             }
         }

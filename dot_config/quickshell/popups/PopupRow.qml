@@ -39,6 +39,8 @@ MouseArea {
             text: row.glyph
             color: row.dim ? Theme.textFaint : Theme.text
             font.family: Theme.fontIcons
+            font.weight: Theme.fontWeight
+            font.styleName: "Medium"
             font.pointSize: Theme.fontSize + 1
         }
 
@@ -61,7 +63,7 @@ MouseArea {
         color: row.dim ? Theme.textFaint : Theme.text
         font.family: Theme.fontUi
         font.pointSize: Theme.fontSize
-        font.weight: row.active ? Font.DemiBold : Font.Normal
+        font.weight: row.active ? Font.DemiBold : Theme.fontWeight
     }
 
     Text {
@@ -71,7 +73,8 @@ MouseArea {
         anchors.verticalCenter: parent.verticalCenter
         text: row.detail
         color: Theme.textFaint
-        font.family: Theme.fontIcons
+        font.family: Theme.fontUi // icons fall back to Theme.fontIcons
+        font.weight: Theme.fontWeight
         font.pointSize: Theme.fontSize
     }
 

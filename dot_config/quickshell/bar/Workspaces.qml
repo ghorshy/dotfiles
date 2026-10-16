@@ -66,7 +66,7 @@ Row {
                 color: button.isActive ? Theme.text : Theme.textDim
                 font.family: Theme.fontUi
                 font.pointSize: Theme.fontSize
-                font.weight: button.isActive ? Font.ExtraBold : Font.Normal
+                font.weight: button.isActive ? Font.ExtraBold : Theme.fontWeight
             }
 
             HoverHandler {

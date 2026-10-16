@@ -99,6 +99,7 @@ Surface {
                 textFormat: Text.StyledText
                 color: Theme.text
                 font.family: Theme.fontUi
+                font.weight: Theme.fontWeight
                 font.pointSize: Theme.fontSize
                 wrapMode: Text.Wrap
                 maximumLineCount: 6
@@ -129,6 +130,7 @@ Surface {
                             text: parent.modelData.text
                             color: Theme.text
                             font.family: Theme.fontUi
+                            font.weight: Theme.fontWeight
                             font.pointSize: Theme.fontSize - 1
                         }
 

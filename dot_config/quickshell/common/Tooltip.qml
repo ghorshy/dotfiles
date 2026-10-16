@@ -41,6 +41,7 @@ PopupWindow {
             text: root.text
             color: Theme.text
             font.family: Theme.fontUi
+            font.weight: Theme.fontWeight
             font.pointSize: Theme.fontSize
         }
     }
