@@ -58,4 +58,4 @@ hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
 
 -- Blur behind translucent popups, like behind windows. ignore_alpha sits just below
 -- the popup opacity, so only the popup itself is blurred and its shadow is not.
-hl.layer_rule({ match = { namespace = "^(quickshell:(notifications|osd)|rofi)$" }, blur = true, ignore_alpha = {{ subf .opacity.popup 0.1 }} })
+hl.layer_rule({ match = { namespace = "^(quickshell:(notifications|osd|popup)|rofi)$" }, blur = true, ignore_alpha = {{ subf .opacity.popup 0.1 }} })

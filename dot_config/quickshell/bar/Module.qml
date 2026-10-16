@@ -12,6 +12,7 @@ MouseArea {
     property int minWidth: 0
     property int weight: Font.Normal
     property bool clickable: true
+    property bool dim: false
 
     implicitWidth: Math.max(minWidth, label.implicitWidth) + padLeft + padRight
     implicitHeight: parent?.height ?? 32
@@ -34,7 +35,7 @@ MouseArea {
         anchors.verticalCenter: parent.verticalCenter
         x: root.padLeft + (root.width - root.padLeft - root.padRight - width) / 2
         text: root.text
-        color: Theme.text
+        color: root.dim ? Theme.textFaint : Theme.text
         font.family: Theme.fontIcons
         font.pointSize: Theme.fontSize
         font.weight: root.weight

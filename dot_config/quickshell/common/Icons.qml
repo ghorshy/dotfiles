@@ -14,6 +14,22 @@ Singleton {
     readonly property string micMuted: String.fromCodePoint(0xF131)
     readonly property string brightness: String.fromCodePoint(0xF00E0)
 
+    readonly property var wifi: [0xF091F, 0xF0922, 0xF0925, 0xF0928].map(c => String.fromCodePoint(c))
+    readonly property string wifiOff: String.fromCodePoint(0xF092F)
+    readonly property string ethernet: String.fromCodePoint(0xF0200)
+    readonly property string vpn: String.fromCodePoint(0xF033E)
+    // Font Awesome set, like the volume and microphone glyphs: bare rune when on (dimmed when off),
+    // the filled badge once a device is connected
+    readonly property string bluetooth: String.fromCodePoint(0xF294)
+    readonly property string bluetoothOff: String.fromCodePoint(0xF294)
+    readonly property string bluetoothConnected: String.fromCodePoint(0xF293)
+    readonly property string batteryAlert: String.fromCodePoint(0xF0083)
+    readonly property string chevronLeft: String.fromCodePoint(0xF0141)
+    readonly property string chevronRight: String.fromCodePoint(0xF0142)
+    readonly property string check: String.fromCodePoint(0xF012C)
+    readonly property string refresh: String.fromCodePoint(0xF0450)
+    readonly property string settings: String.fromCodePoint(0xF0493)
+
     readonly property string lock: String.fromCodePoint(0xF023)
     readonly property string suspend: String.fromCodePoint(0xF03E4)
     readonly property string logout: String.fromCodePoint(0xF05FD)

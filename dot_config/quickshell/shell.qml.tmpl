@@ -3,10 +3,12 @@
 
 import QtQuick
 import Quickshell
+import Quickshell.Io
 import qs.bar
 import qs.notifications
 import qs.osd
 import qs.powermenu
+import qs.common
 
 ShellRoot {
     Variants {
@@ -18,6 +20,16 @@ ShellRoot {
     }
 
     Notifications {}
+    BatteryWarnings {}
+
+    // qs ipc call popups toggle network|bluetooth|calendar (on the focused monitor)
+    IpcHandler {
+        target: "popups"
+
+        function toggle(name: string): void {
+            Popups.toggle(`${name}@${Screens.focused?.name}`);
+        }
+    }
     Osd {}
     PowerMenu {}
 }

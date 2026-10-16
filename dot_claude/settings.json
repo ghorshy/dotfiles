@@ -1,9 +1,20 @@
 {
-  "tui": "fullscreen",
-  "theme": "dark",
   "attribution": {
     "commit": "",
     "pr": "",
     "sessionUrl": false
-  }
+  },
+  "enabledPlugins": {
+    "mattpocock-skills@mattpocock": true
+  },
+  "extraKnownMarketplaces": {
+    "mattpocock": {
+      "source": {
+        "source": "github",
+        "repo": "mattpocock/skills"
+      }
+    }
+  },
+  "tui": "fullscreen",
+  "theme": "dark"
 }

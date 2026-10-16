@@ -56,10 +56,18 @@ PanelWindow {
         Tray {
             anchors.verticalCenter: parent.verticalCenter
         }
+        NetworkIcon {
+            barWindow: bar
+        }
+        BluetoothIcon {
+            barWindow: bar
+        }
         Volume {}
         Microphone {
             padRight: 0
         }
-        Clock {}
+        Clock {
+            barWindow: bar
+        }
     }
 }
