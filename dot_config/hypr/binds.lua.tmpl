@@ -40,7 +40,7 @@ for i = 1, 10 do
 	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
 	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
 {{- else }}
-local smw = hl.plugin.split_monitor_workspaces
+local smw = require("plugins.split-monitor-workspaces")
 for i = 1, 5 do
 	local key = tostring(i)
 	hl.bind(mainMod .. " + " .. key, function()
@@ -87,8 +87,16 @@ hl.bind(
 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+ && qs ipc call osd brightness"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%- && qs ipc call osd brightness"), { locked = true, repeating = true })
+hl.bind(
+	"XF86MonBrightnessUp",
+	hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+ && qs ipc call osd brightness"),
+	{ locked = true, repeating = true }
+)
+hl.bind(
+	"XF86MonBrightnessDown",
+	hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%- && qs ipc call osd brightness"),
+	{ locked = true, repeating = true }
+)
 
 -- Multimedia audio binds
 -- code:62 = RIGHT SHIFT

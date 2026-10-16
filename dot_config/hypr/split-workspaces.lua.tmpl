@@ -1,14 +1,10 @@
 {{- if has .chezmoi.hostname .hosts.laptops -}}
 -- split-monitor-workspaces is only used on the desktop (see .chezmoidata/hosts.toml)
 {{- else -}}
-hl.config({
-	plugin = {
-		split_monitor_workspaces = {
-			count = 5,
-		},
-	},
-})
+package.path = package.path .. ";./?.lua;./?/init.lua"
+local smw = require("plugins.split-monitor-workspaces")
 
-local smw = hl.plugin.split_monitor_workspaces
-smw.monitor_priority({ "DP-1", "DP-2" })
+smw.setup({
+	workspace_count = 5,
+})
 {{- end }}
