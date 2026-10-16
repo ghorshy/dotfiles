@@ -1,0 +1,39 @@
+{{- if has .chezmoi.hostname .hosts.laptops -}}
+hl.monitor({
+	output = "eDP-1",
+	mode = "1920x1080@60",
+	position = "0x0",
+	scale = "1",
+	bitdepth = 6,
+	vrr = 2,
+})
+
+hl.monitor({
+	output = "HDMI-A-1",
+	mode = "2560x1600@60",
+	position = "0x-1600",
+	scale = "1",
+	bitdepth = 8,
+	vrr = 2,
+})
+
+-- hl.monitor({ output = "", mode = "preferred", position = "auto", scale = 1, mirror = "eDP-1" })
+{{- else -}}
+hl.monitor({
+	output = "DP-1",
+	mode = "2560x1440@180",
+	position = "0x0",
+	scale = "1",
+	bitdepth = 10,
+	vrr = 2,
+})
+
+hl.monitor({
+	output = "DP-2",
+	mode = "2560x1440@144",
+	position = "-2560x0",
+	scale = "1",
+	bitdepth = 10,
+	vrr = 1,
+})
+{{- end }}

@@ -1,0 +1,55 @@
+# Single source of truth for the desktop look.
+# Templates (*.tmpl) in hypr, quickshell, rofi, mako and kitty read these values.
+# After editing run: chezmoi apply
+
+[colors]
+# neutrals
+base         = "212121" # popups, notifications, launcher, terminal background
+surface      = "424242" # hover / active workspace / separators
+overlay      = "616161" # selected entry
+border       = "595959" # inactive window and popup border
+borderActive = "eeeeee" # active window border, focused button
+shadow       = "1a1a1a"
+shade        = "000000" # bar gradient
+
+# text
+text         = "fafafa"
+textBright   = "ffffff"
+subtext      = "dedede" # placeholders, secondary text
+muted        = "8f8f8f"
+subtle       = "bdbdbd" # urgent workspace pulse
+
+# accents
+accent       = "eba0ac"
+info         = "81d4fa"
+warning      = "ffd866"
+urgent       = "e53935"
+urgentBg     = "b71c1c"
+
+[colors.term]
+color0  = "2d2a2e"
+color1  = "ef6155"
+color2  = "a9dc76"
+color3  = "ffd866"
+color4  = "4899ff"
+color5  = "cc99cc"
+color6  = "24c1e0"
+color7  = "cccccc"
+color8  = "908e8f"
+color9  = "ef6155"
+color10 = "a9dc76"
+color11 = "ffd866"
+color12 = "4899ff"
+color13 = "cc99cc"
+color14 = "24c1e0"
+color15 = "fafafa"
+
+[fonts]
+ui      = "Inter"
+icons   = "Inter Nerd Font Propo"
+mono    = "JetBrains Mono"
+
+[ui]
+radius    = 4
+border    = 1
+iconTheme = "Papirus-Dark"

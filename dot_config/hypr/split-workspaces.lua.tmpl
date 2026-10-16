@@ -1,3 +1,6 @@
+{{- if has .chezmoi.hostname .hosts.laptops -}}
+-- split-monitor-workspaces is only used on the desktop (see .chezmoidata/hosts.toml)
+{{- else -}}
 hl.config({
 	plugin = {
 		split_monitor_workspaces = {
@@ -8,3 +11,4 @@ hl.config({
 
 local smw = hl.plugin.split_monitor_workspaces
 smw.monitor_priority({ "DP-1", "DP-2" })
+{{- end }}

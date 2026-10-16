@@ -1,0 +1,5 @@
+# Machine-specific config. Hosts listed here get the laptop variant
+# (eDP-1 + HDMI, workspaces 1-10); every other host gets the desktop variant
+# (DP-1 + DP-2 with split-monitor-workspaces).
+[hosts]
+laptops = ["hp-15s"]

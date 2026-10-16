@@ -1,0 +1,23 @@
+//@ pragma UseQApplication
+//@ pragma IconTheme {{ .ui.iconTheme }}
+
+import QtQuick
+import Quickshell
+import qs.bar
+import qs.notifications
+import qs.osd
+import qs.powermenu
+
+ShellRoot {
+    Variants {
+        model: Quickshell.screens
+
+        delegate: Component {
+            Bar {}
+        }
+    }
+
+    Notifications {}
+    Osd {}
+    PowerMenu {}
+}

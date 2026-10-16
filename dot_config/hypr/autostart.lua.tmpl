@@ -1,7 +1,6 @@
 hl.on("hyprland.start", function()
-	hl.exec_cmd("waybar")
+	hl.exec_cmd("qs")
 	hl.exec_cmd("hyprpaper")
-	hl.exec_cmd("mako")
 	hl.exec_cmd("hypridle")
 	hl.exec_cmd("systemctl start bluetooth.service")
 	hl.exec_cmd("blueman-applet")
@@ -9,7 +8,11 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("udiskie -s")
 	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 20")
 	hl.exec_cmd("hyprpm reload")
+{{- if has .chezmoi.hostname .hosts.laptops }}
+	hl.exec_cmd("zen-browser", { workspace = "1" })
+{{- else }}
 	hl.exec_cmd("sleep 20 && steam -silent", { workspace = "9" })
 	hl.exec_cmd("discord", { workspace = "8" })
 	hl.exec_cmd("zen-browser", { workspace = "6" })
+{{- end }}
 end)

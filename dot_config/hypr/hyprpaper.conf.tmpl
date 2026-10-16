@@ -1,0 +1,23 @@
+{{- if has .chezmoi.hostname .hosts.laptops -}}
+wallpaper {
+  monitor = eDP-1
+  path = ~/.config/backgrounds/neosaka.jpg
+}
+wallpaper {
+    monitor = HDMI-A-1
+    path = ~/.config/backgrounds/neosaka.jpg
+  }
+splash = false
+{{- else -}}
+wallpaper {
+  monitor = DP-1
+  path = ~/.config/backgrounds/neosaka.jpg
+}
+
+wallpaper {
+  monitor = DP-2
+  path = ~/.config/backgrounds/neosaka.jpg
+}
+
+splash = false
+{{- end }}

@@ -1,13 +1,15 @@
+local theme = require("colors")
+
 hl.config({
 	general = {
 		gaps_in = 2,
 
 		gaps_out = 8,
-		border_size = 1,
+		border_size = theme.border_size,
 
 		col = {
-			active_border = "rgba(eeeeeed9)",
-			inactive_border = "rgba(595959aa)",
+			active_border = theme.active_border,
+			inactive_border = theme.inactive_border,
 		},
 
 		resize_on_border = false,
@@ -16,7 +18,7 @@ hl.config({
 	},
 
 	decoration = {
-		rounding = 4,
+		rounding = theme.rounding,
 		rounding_power = 2,
 
 		active_opacity = 1.0,
@@ -26,7 +28,7 @@ hl.config({
 			enabled = true,
 			range = 4,
 			render_power = 3,
-			color = "rgba(1a1a1aee)",
+			color = theme.shadow,
 		},
 
 		blur = {

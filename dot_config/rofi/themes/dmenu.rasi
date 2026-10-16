@@ -1,14 +1,6 @@
+@import "~/.config/rofi/colors.rasi"
+
 * {
-    font:   "Inter 10";
-
-    bg0:    #212121E6;
-    bg1:    #42424280;
-    bg2:    #616161E6;
-
-    fg0:    #FAFAFA;
-    fg1:    #FFFFFF;
-    fg2:    #DEDEDE80;
-
     background-color:   transparent;
     text-color:         @fg0;
 
@@ -28,9 +20,9 @@ window {
     background-color:   @bg0;
     location:       center;
     width:          640;
-    border-radius:  4;
+    border-radius:  @radius;
     border:         1px solid;
-    border-color:   #595959;
+    border-color:   @border0;
 }
 
 inputbar {

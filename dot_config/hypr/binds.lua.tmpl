@@ -34,6 +34,12 @@ hl.bind(mainMod .. "+ up", hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. "+ down", hl.dsp.focus({ direction = "down" }))
 
 -- # Switch workspaces with mainMod + [0-5]
+{{- if has .chezmoi.hostname .hosts.laptops }}
+for i = 1, 10 do
+	local key = i % 10 -- 10 maps to key 0
+	hl.bind(mainMod .. " + " .. key, hl.dsp.focus({ workspace = i }))
+	hl.bind(mainMod .. " + SHIFT + " .. key, hl.dsp.window.move({ workspace = i }))
+{{- else }}
 local smw = hl.plugin.split_monitor_workspaces
 for i = 1, 5 do
 	local key = tostring(i)
@@ -43,6 +49,7 @@ for i = 1, 5 do
 	hl.bind(mainMod .. " + SHIFT + " .. key, function()
 		return smw.move_to_workspace_silent(i)
 	end)
+{{- end }}
 end
 
 -- Example special workspace (scratchpad)
@@ -80,8 +87,8 @@ hl.bind(
 	hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"),
 	{ locked = true, repeating = true }
 )
-hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
-hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessUp", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+ && qs ipc call osd brightness"), { locked = true, repeating = true })
+hl.bind("XF86MonBrightnessDown", hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%- && qs ipc call osd brightness"), { locked = true, repeating = true })
 
 -- Multimedia audio binds
 -- code:62 = RIGHT SHIFT

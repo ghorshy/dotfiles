@@ -55,7 +55,7 @@ ensure_yay() {
 sudo pacman -Sy --noconfirm
 
 # ─── 1. Hyprland packages ─────────────────────────────────────────────────────
-if ask "Install Hyprland UI packages (waybar, mako, rofi, fonts, grim, slurp, etc.)"; then
+if ask "Install Hyprland UI packages (quickshell, rofi, fonts, grim, slurp, etc.)"; then
   install_pacman \
     hyprland \
     networkmanager network-manager-applet \
@@ -63,7 +63,7 @@ if ask "Install Hyprland UI packages (waybar, mako, rofi, fonts, grim, slurp, et
     hypridle hyprlock hyprpaper \
     xdg-desktop-portal-hyprland \
     qt5-wayland qt6-wayland qt5ct \
-    waybar mako nwg-look papirus-icon-theme \
+    quickshell upower brightnessctl playerctl nwg-look papirus-icon-theme \
     rofi-wayland rofi-emoji rofi-calc \
     inter-font noto-fonts-emoji ttf-font-awesome ttf-jetbrains-mono \
     pavucontrol pamixer \
