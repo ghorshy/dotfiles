@@ -31,6 +31,13 @@ PanelWindow {
         }
     }
 
+    // a click on an empty part of the bar closes the open popup
+    MouseArea {
+        anchors.fill: parent
+        acceptedButtons: Qt.AllButtons
+        onClicked: Popups.close()
+    }
+
     Workspaces {
         id: left
         anchors.left: parent.left

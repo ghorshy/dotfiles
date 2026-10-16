@@ -43,12 +43,8 @@ for i = 1, 10 do
 local smw = require("plugins.split-monitor-workspaces")
 for i = 1, 5 do
 	local key = tostring(i)
-	hl.bind(mainMod .. " + " .. key, function()
-		return smw.workspace(i)
-	end)
-	hl.bind(mainMod .. " + SHIFT + " .. key, function()
-		return smw.move_to_workspace_silent(i)
-	end)
+	hl.bind(mainMod .. " + " .. key, smw.workspace(i))
+	hl.bind(mainMod .. " + SHIFT + " .. key, smw.move_to_workspace_silent(i))
 {{- end }}
 end
 
