@@ -1,5 +1,5 @@
 {{- /* Colors, color scheme name and window colors come from the installed Qt theme
-       (github.com/ghorshy/Bazalth); left out until it is installed. */ -}}
+       (github.com/ghorshy/Bazalth-KDE); left out until it is installed. */ -}}
 {{- $scheme := joinPath .chezmoi.homeDir ".local/share/color-schemes" (printf "%s.colors" .qt.colorScheme) -}}
 {{- if stat $scheme }}{{ regexReplaceAll "(?m)^#.*\n" (include $scheme) "" }}
 {{ end -}}

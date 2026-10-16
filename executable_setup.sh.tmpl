@@ -130,9 +130,9 @@ if ask "Install Bazalth Qt theme and Graphite GTK theme"; then
   else
     echo "--- Installing Qt theme ---"
     cd /tmp || exit
-    rm -rf {{ .qt.colorScheme }}
-    git clone https://github.com/ghorshy/{{ .qt.colorScheme }}
-    cd {{ .qt.colorScheme }} || exit
+    rm -rf Bazalth-KDE
+    git clone https://github.com/ghorshy/Bazalth-KDE
+    cd Bazalth-KDE || exit
     ./install.sh --apply
   fi
 
