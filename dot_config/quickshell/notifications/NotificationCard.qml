@@ -5,7 +5,7 @@ import Quickshell.Widgets
 import Quickshell.Services.Notifications
 import qs.common
 
-Rectangle {
+Surface {
     id: card
 
     required property Notification modelData
@@ -22,10 +22,8 @@ Rectangle {
 
     width: parent?.width ?? 320
     implicitHeight: content.implicitHeight + 20
-    radius: Theme.radius
-    color: Theme.alpha(critical ? Theme.urgentBg : Theme.base, 0.85)
-    border.width: Theme.borderWidth
-    border.color: Theme.alpha(critical ? Theme.urgent : Theme.border, 0.85)
+    tint: critical ? Theme.urgentBg : Theme.base
+    borderTint: critical ? Theme.urgent : Theme.border
 
     // slide in from the right
     opacity: 0
@@ -36,8 +34,8 @@ Rectangle {
     Component.onCompleted: appear.start()
     ParallelAnimation {
         id: appear
-        NumberAnimation { target: card; property: "opacity"; to: 1; duration: 180; easing.type: Easing.OutQuint }
-        NumberAnimation { target: slide; property: "x"; to: 0; duration: 260; easing.type: Easing.OutQuint }
+        NumberAnimation { target: card; property: "opacity"; to: 1; duration: Theme.animFast; easing.type: Easing.BezierSpline; easing.bezierCurve: Theme.curve }
+        NumberAnimation { target: slide; property: "x"; to: 0; duration: Theme.animNormal; easing.type: Easing.BezierSpline; easing.bezierCurve: Theme.curve }
     }
 
     Timer {
@@ -83,7 +81,7 @@ Rectangle {
                 text: card.modelData.summary
                 color: Theme.text
                 font.family: Theme.fontUi
-                font.pointSize: 10
+                font.pointSize: Theme.fontSize
                 font.weight: Font.Bold
                 wrapMode: Text.Wrap
                 maximumLineCount: 2
@@ -97,7 +95,7 @@ Rectangle {
                 textFormat: Text.StyledText
                 color: Theme.text
                 font.family: Theme.fontUi
-                font.pointSize: 10
+                font.pointSize: Theme.fontSize
                 wrapMode: Text.Wrap
                 maximumLineCount: 6
                 elide: Text.ElideRight
@@ -119,7 +117,7 @@ Rectangle {
                         implicitWidth: actionLabel.implicitWidth + 16
                         implicitHeight: actionLabel.implicitHeight + 8
                         radius: Theme.radius
-                        color: actionMouse.containsMouse ? Theme.alpha(Theme.surface, 1) : Theme.alpha(Theme.surface, 0.5)
+                        color: Theme.alpha(Theme.surface, actionMouse.containsMouse ? 1 : Theme.opacity.muted)
 
                         Text {
                             id: actionLabel
@@ -127,7 +125,7 @@ Rectangle {
                             text: parent.modelData.text
                             color: Theme.text
                             font.family: Theme.fontUi
-                            font.pointSize: 9
+                            font.pointSize: Theme.fontSize - 1
                         }
 
                         MouseArea {

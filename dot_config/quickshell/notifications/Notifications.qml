@@ -25,13 +25,14 @@ Scope {
             top: true
             right: true
         }
+        // leave room for the card shadow, cards sit gapsOut px from the edges like windows
         margins {
-            top: 8
-            right: 8
+            top: Theme.gapsOut - Theme.shadowRange
+            right: Theme.gapsOut - Theme.shadowRange
         }
         exclusiveZone: 0
-        implicitWidth: 320
-        implicitHeight: column.implicitHeight
+        implicitWidth: 320 + 2 * Theme.shadowRange
+        implicitHeight: column.implicitHeight + 2 * Theme.shadowRange
         color: "transparent"
 
         WlrLayershell.layer: WlrLayer.Top
@@ -39,7 +40,9 @@ Scope {
 
         Column {
             id: column
-            width: parent.width
+            x: Theme.shadowRange
+            y: Theme.shadowRange
+            width: parent.width - 2 * Theme.shadowRange
             spacing: 10
 
             Repeater {

@@ -1,9 +1,9 @@
 # Single source of truth for the desktop look.
-# Templates (*.tmpl) in hypr, quickshell, rofi, mako and kitty read these values.
-# After editing run: chezmoi apply
+# Templates (*.tmpl) in hypr, quickshell, rofi, kitty, gtk, qt and setup.sh read these values.
+# After editing run: chezmoi apply && qs kill; qs -d
 
 [colors]
-# neutrals
+# surfaces
 base         = "212121" # popups, notifications, launcher, terminal background
 surface      = "424242" # hover / active workspace / separators
 overlay      = "616161" # selected entry
@@ -14,20 +14,17 @@ shade        = "000000" # bar gradient
 
 # text
 text         = "fafafa"
-textBright   = "ffffff"
-subtext      = "dedede" # placeholders, secondary text
-muted        = "8f8f8f"
-subtle       = "bdbdbd" # urgent workspace pulse
+textDim      = "bdbdbd" # inactive workspaces, urgent pulse
+textFaint    = "8f8f8f" # placeholders, hints
 
-# accents
-accent       = "eba0ac"
-info         = "81d4fa"
+# states
 warning      = "ffd866"
 urgent       = "e53935"
 urgentBg     = "b71c1c"
 
+# terminal (Monokai Pro based, neutral black, distinct bright variants)
 [colors.term]
-color0  = "2d2a2e"
+color0  = "303030"
 color1  = "ef6155"
 color2  = "a9dc76"
 color3  = "ffd866"
@@ -35,21 +32,53 @@ color4  = "4899ff"
 color5  = "cc99cc"
 color6  = "24c1e0"
 color7  = "cccccc"
-color8  = "908e8f"
-color9  = "ef6155"
-color10 = "a9dc76"
-color11 = "ffd866"
-color12 = "4899ff"
-color13 = "cc99cc"
-color14 = "24c1e0"
+color8  = "8f8f8f"
+color9  = "ff7a6e"
+color10 = "bce68f"
+color11 = "ffe28a"
+color12 = "6dadff"
+color13 = "ddb3dd"
+color14 = "5ad2ea"
 color15 = "fafafa"
 
+# Opacity levels, the only ones used anywhere.
+[opacity]
+popup   = 0.9  # rofi, notifications, OSD, tooltips, active window border
+window  = 0.8  # terminal background
+active  = 0.67 # active workspace, inactive window border
+muted   = 0.5  # separators, secondary buttons
+hover   = 0.3
+shadow  = 0.93
+
 [fonts]
-ui      = "Inter"
-icons   = "Inter Nerd Font Propo"
-mono    = "JetBrains Mono"
+ui        = "Inter"
+appWeight = "Medium"                # GTK / Qt apps use "Inter Medium"
+icons     = "Inter Nerd Font Propo" # Inter patched with Nerd Font glyphs
+mono      = "JetBrains Mono"
+size      = 10 # pt, everything: apps, bar, launcher, notifications, terminal
+sizeLarge = 14 # pt, launcher input, OSD icons
+
+[cursor]
+theme = "Bibata-Modern-Ice"
+size  = 20
+
+[gtk]
+theme = "Graphite-Dark-compact"
+
+[qt]
+colorScheme = "GraphiteDark"
 
 [ui]
-radius    = 4
-border    = 1
-iconTheme = "Papirus-Dark"
+iconTheme   = "Papirus-Dark"
+radius      = 4
+border      = 1
+shadowRange = 4 # px, shared by Hyprland windows and Quickshell popups
+gapsIn      = 2
+gapsOut     = 8 # also the margin of notifications and the bar's left padding
+barHeight   = 32
+
+# Hyprland's easeOutQuint, reused by Quickshell animations.
+[animation]
+curve  = [0.23, 1, 0.32, 1]
+fast   = 200 # ms
+normal = 300 # ms

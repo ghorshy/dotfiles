@@ -16,7 +16,7 @@ PanelWindow {
         left: true
         right: true
     }
-    implicitHeight: 32
+    implicitHeight: Theme.barHeight
     color: "transparent"
 
     WlrLayershell.layer: WlrLayer.Top
@@ -34,7 +34,7 @@ PanelWindow {
     Workspaces {
         id: left
         anchors.left: parent.left
-        anchors.leftMargin: 8
+        anchors.leftMargin: Theme.gapsOut
         anchors.verticalCenter: parent.verticalCenter
         monitor: bar.monitor
     }

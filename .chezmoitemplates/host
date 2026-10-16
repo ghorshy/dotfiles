@@ -1,0 +1,2 @@
+{{- /* "laptop" or "desktop", see .chezmoidata/hosts.toml */ -}}
+{{- if has .chezmoi.hostname .hosts.laptops }}laptop{{ else }}desktop{{ end -}}

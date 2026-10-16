@@ -96,22 +96,19 @@ Scope {
         PanelWindow {
             screen: Screens.focused
             anchors.bottom: true
-            margins.bottom: 80
+            margins.bottom: 80 - Theme.shadowRange
             exclusiveZone: 0
-            implicitWidth: root.showBar ? 260 : 56
-            implicitHeight: 48
+            implicitWidth: (root.showBar ? 260 : 56) + 2 * Theme.shadowRange
+            implicitHeight: 48 + 2 * Theme.shadowRange
             color: "transparent"
             mask: Region {}
 
             WlrLayershell.layer: WlrLayer.Overlay
             WlrLayershell.namespace: "quickshell:osd"
 
-            Rectangle {
+            Surface {
                 anchors.fill: parent
-                radius: Theme.radius
-                color: Theme.alpha(Theme.base, 0.9)
-                border.width: Theme.borderWidth
-                border.color: Theme.border
+                anchors.margins: Theme.shadowRange
 
                 RowLayout {
                     anchors.fill: parent
@@ -126,7 +123,7 @@ Scope {
                         text: root.icon
                         color: Theme.text
                         font.family: Theme.fontIcons
-                        font.pixelSize: 18
+                        font.pointSize: Theme.fontSizeLarge
                     }
 
                     Rectangle {
@@ -140,12 +137,13 @@ Scope {
                             width: parent.width * Math.max(0, Math.min(1, root.value))
                             height: parent.height
                             radius: parent.radius
-                            color: root.dimmed ? Theme.muted : Theme.text
+                            color: root.dimmed ? Theme.textFaint : Theme.text
 
                             Behavior on width {
                                 NumberAnimation {
-                                    duration: 120
-                                    easing.type: Easing.OutQuad
+                                    duration: Theme.animFast
+                                    easing.type: Easing.BezierSpline
+                                    easing.bezierCurve: Theme.curve
                                 }
                             }
                         }
@@ -158,7 +156,7 @@ Scope {
                         text: Math.round(root.value * 100)
                         color: Theme.text
                         font.family: Theme.fontUi
-                        font.pixelSize: 13
+                        font.pointSize: Theme.fontSize
                         font.weight: Font.DemiBold
                     }
                 }

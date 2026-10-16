@@ -2,9 +2,8 @@ local theme = require("colors")
 
 hl.config({
 	general = {
-		gaps_in = 2,
-
-		gaps_out = 8,
+		gaps_in = theme.gaps_in,
+		gaps_out = theme.gaps_out,
 		border_size = theme.border_size,
 
 		col = {
@@ -26,7 +25,7 @@ hl.config({
 
 		shadow = {
 			enabled = true,
-			range = 4,
+			range = theme.shadow_range,
 			render_power = 3,
 			color = theme.shadow,
 		},
@@ -45,7 +44,7 @@ hl.config({
 	},
 })
 
-hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
+hl.curve("easeOutQuint", { type = "bezier", points = theme.ease_out_quint })
 hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
 hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
 hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })

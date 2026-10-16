@@ -116,7 +116,7 @@ Scope {
                     text: "Are you sure?"
                     color: Theme.text
                     font.family: Theme.fontUi
-                    font.pointSize: 10
+                    font.pointSize: Theme.fontSize
                 }
 
                 Row {
@@ -125,7 +125,7 @@ Scope {
                     Repeater {
                         model: menu.options
 
-                        delegate: Rectangle {
+                        delegate: Surface {
                             id: button
 
                             required property var modelData
@@ -134,10 +134,9 @@ Scope {
 
                             width: (menu.width - (menu.options.length - 1) * 4) / menu.options.length
                             height: glyph.implicitHeight + 50
-                            radius: Theme.radius
-                            color: Theme.base
-                            border.width: Theme.borderWidth
-                            border.color: selected ? Theme.borderActive : Theme.border
+                            // opaque like the old rofi power menu
+                            level: 1
+                            borderTint: selected ? Theme.borderActive : Theme.border
 
                             Text {
                                 id: glyph

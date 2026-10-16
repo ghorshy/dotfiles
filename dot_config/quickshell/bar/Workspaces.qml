@@ -28,13 +28,14 @@ Row {
             radius: Theme.radius
             color: {
                 if (isActive)
-                    return Theme.alpha(Theme.surface, hover.hovered ? 1 : 0.67);
-                return hover.hovered ? Theme.alpha(Theme.surface, 0.3) : "transparent";
+                    return Theme.alpha(Theme.surface, hover.hovered ? 1 : Theme.opacity.active);
+                return hover.hovered ? Theme.alpha(Theme.surface, Theme.opacity.hover) : "transparent";
             }
             Behavior on color {
                 ColorAnimation {
-                    duration: 300
-                    easing.type: Easing.InOutQuad
+                    duration: Theme.animNormal
+                    easing.type: Easing.BezierSpline
+                    easing.bezierCurve: Theme.curve
                 }
             }
 
@@ -43,7 +44,7 @@ Row {
                 id: pulse
                 anchors.fill: parent
                 radius: parent.radius
-                color: Theme.subtle
+                color: Theme.textDim
                 opacity: 0
 
                 SequentialAnimation on opacity {
@@ -51,7 +52,7 @@ Row {
                     loops: Animation.Infinite
                     onRunningChanged: if (!running) pulse.opacity = 0
                     PauseAnimation { duration: 400 }
-                    NumberAnimation { to: 0.5; duration: 400 }
+                    NumberAnimation { to: Theme.opacity.muted; duration: 400 }
                     NumberAnimation { to: 0; duration: 1000 }
                     PauseAnimation { duration: 200 }
                 }
@@ -61,9 +62,9 @@ Row {
                 id: label
                 anchors.centerIn: parent
                 text: button.modelData.name
-                color: button.isActive ? Theme.text : Theme.alpha(Theme.text, 0.75)
+                color: button.isActive ? Theme.text : Theme.textDim
                 font.family: Theme.fontUi
-                font.pixelSize: 13
+                font.pointSize: Theme.fontSize
                 font.weight: button.isActive ? Font.ExtraBold : Font.Normal
             }
 

@@ -6,7 +6,7 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd("blueman-applet")
 	hl.exec_cmd("nm-applet")
 	hl.exec_cmd("udiskie -s")
-	hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 20")
+	hl.exec_cmd("hyprctl setcursor {{ .cursor.theme }} {{ .cursor.size }}")
 	hl.exec_cmd("hyprpm reload")
 {{- if has .chezmoi.hostname .hosts.laptops }}
 	hl.exec_cmd("zen-browser", { workspace = "1" })

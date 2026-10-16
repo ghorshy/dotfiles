@@ -31,7 +31,9 @@ Row {
             opacity: containsMouse ? 0.7 : 1
             Behavior on opacity {
                 NumberAnimation {
-                    duration: 200
+                    duration: Theme.animFast
+                    easing.type: Easing.BezierSpline
+                    easing.bezierCurve: Theme.curve
                 }
             }
 

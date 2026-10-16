@@ -1,13 +1,14 @@
+{{- $host := index .hosts (includeTemplate "host" .) -}}
 [Appearance]
-color_scheme_path=/home/grsh/.local/share/color-schemes/GraphiteDark.colors
+color_scheme_path={{ .chezmoi.homeDir }}/.local/share/color-schemes/{{ .qt.colorScheme }}.colors
 custom_palette=true
-icon_theme=Papirus-Dark
+icon_theme={{ .ui.iconTheme }}
 standard_dialogs=default
-style=kvantum
+style={{ $host.qtStyle }}
 
 [Fonts]
-fixed="JetBrains Mono,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
-general="Inter Medium,10,-1,5,500,0,0,0,0,0,0,0,0,0,0,1,Regular"
+fixed="{{ .fonts.mono }},{{ .fonts.size }},-1,5,400,0,0,0,0,0,0,0,0,0,0,1,,0,0"
+general="{{ .fonts.ui }} {{ .fonts.appWeight }},{{ .fonts.size }},-1,5,500,0,0,0,0,0,0,0,0,0,0,1,Regular,0,0"
 
 [Interface]
 activate_item_on_single_click=1
@@ -23,9 +24,6 @@ stylesheets=@Invalid()
 toolbutton_style=4
 underline_shortcut=1
 wheel_scroll_lines=3
-
-[SettingsWindow]
-geometry=@ByteArray(\x1\xd9\xd0\xcb\0\x3\0\0\0\0\0\0\0\0\0\0\0\0\t\xff\0\0\x5\x7f\0\0\0\0\0\0\0\0\0\0\x4\xf3\0\0\x2\xb3\0\0\0\0\x2\0\0\0\n\0\0\0\0\0\0\0\0\0\0\0\t\xff\0\0\x5\x7f)
 
 [Troubleshooting]
 force_raster_widgets=1

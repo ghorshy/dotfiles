@@ -1,5 +1,13 @@
-# Machine-specific config. Hosts listed here get the laptop variant
+# Machine-specific config. Hosts listed in `laptops` get the laptop variant
 # (eDP-1 + HDMI, workspaces 1-10); every other host gets the desktop variant
 # (DP-1 + DP-2 with split-monitor-workspaces).
 [hosts]
 laptops = ["hp-15s"]
+
+[hosts.laptop]
+lockMonitor = "" # hyprlock widgets on every monitor
+qtStyle     = "kvantum-dark"
+
+[hosts.desktop]
+lockMonitor = "DP-1" # hyprlock widgets only on the main monitor
+qtStyle     = "kvantum"

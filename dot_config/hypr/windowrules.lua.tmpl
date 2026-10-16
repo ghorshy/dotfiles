@@ -55,3 +55,7 @@ hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, border_size = 
 hl.window_rule({ match = { float = false, workspace = "w[tv1]" }, rounding = 0 })
 hl.window_rule({ match = { float = false, workspace = "f[1]" }, border_size = 0 })
 hl.window_rule({ match = { float = false, workspace = "f[1]" }, rounding = 0 })
+
+-- Blur behind translucent popups, like behind windows. ignore_alpha keeps the
+-- fully transparent parts (and most of the shadow) out of the blur.
+hl.layer_rule({ match = { namespace = "^(quickshell:(notifications|osd)|rofi)$" }, blur = true, ignore_alpha = 0.5 })

@@ -1,0 +1,1 @@
+{{- /* opacity (0..1) -> two hex digits, e.g. 0.9 -> e6 */ -}}{{- printf "%02x" (int (round (mulf 255.0 (float64 .)) 0)) -}}

@@ -23,7 +23,9 @@ MouseArea {
     opacity: containsMouse ? 0.7 : 1
     Behavior on opacity {
         NumberAnimation {
-            duration: 200
+            duration: Theme.animFast
+            easing.type: Easing.BezierSpline
+            easing.bezierCurve: Theme.curve
         }
     }
 
@@ -34,7 +36,7 @@ MouseArea {
         text: root.text
         color: Theme.text
         font.family: Theme.fontIcons
-        font.pixelSize: 13
+        font.pointSize: Theme.fontSize
         font.weight: root.weight
     }
 

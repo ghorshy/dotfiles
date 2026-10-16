@@ -10,10 +10,11 @@ PopupWindow {
 
     anchor.item: target
     anchor.rect.x: (target.width - width) / 2
-    anchor.rect.y: target.height + 4
+    anchor.rect.y: target.height + 4 - Theme.shadowRange
 
-    implicitWidth: label.implicitWidth + 16
-    implicitHeight: label.implicitHeight + 10
+    // room for the Surface shadow on every side
+    implicitWidth: label.implicitWidth + 16 + 2 * Theme.shadowRange
+    implicitHeight: label.implicitHeight + 10 + 2 * Theme.shadowRange
     visible: delay.ready && hovered && text !== ""
     color: "transparent"
 
@@ -30,10 +31,9 @@ PopupWindow {
         onTriggered: ready = true
     }
 
-    Rectangle {
+    Surface {
         anchors.fill: parent
-        radius: Theme.radius
-        color: Theme.alpha(Theme.base, 0.8)
+        anchors.margins: Theme.shadowRange
 
         Text {
             id: label
@@ -41,7 +41,7 @@ PopupWindow {
             text: root.text
             color: Theme.text
             font.family: Theme.fontUi
-            font.pixelSize: 13
+            font.pointSize: Theme.fontSize
         }
     }
 }

@@ -13,6 +13,6 @@ Text {
     horizontalAlignment: Text.AlignHCenter
     color: Theme.text
     font.family: Theme.fontUi
-    font.pixelSize: 13
+    font.pointSize: Theme.fontSize
     font.weight: Font.DemiBold
 }

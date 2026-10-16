@@ -11,12 +11,28 @@ Singleton {
 {{- end }}
 {{- end }}
 
+    readonly property QtObject opacity: QtObject {
+{{- range $name, $value := .opacity }}
+        readonly property real {{ $name }}: {{ $value }}
+{{- end }}
+    }
+
     readonly property string fontUi: "{{ .fonts.ui }}"
     readonly property string fontIcons: "{{ .fonts.icons }}"
     readonly property string fontMono: "{{ .fonts.mono }}"
+    readonly property real fontSize: {{ .fonts.size }} // pt
+    readonly property real fontSizeLarge: {{ .fonts.sizeLarge }} // pt
 
     readonly property int radius: {{ .ui.radius }}
     readonly property int borderWidth: {{ .ui.border }}
+    readonly property int shadowRange: {{ .ui.shadowRange }}
+    readonly property int gapsOut: {{ .ui.gapsOut }}
+    readonly property int barHeight: {{ .ui.barHeight }}
+
+    // Hyprland's easeOutQuint as a Qt bezier spline (control points + end point)
+    readonly property list<real> curve: [{{ range .animation.curve }}{{ . }}, {{ end }}1, 1]
+    readonly property int animFast: {{ .animation.fast }}
+    readonly property int animNormal: {{ .animation.normal }}
 
     function alpha(c: color, a: real): color {
         return Qt.rgba(c.r, c.g, c.b, a);

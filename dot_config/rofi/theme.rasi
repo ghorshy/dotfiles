@@ -22,7 +22,7 @@ window {
 }
 
 inputbar {
-    font:       "Inter 14";
+    font:       @font-large;
     padding:    12px;
     spacing:    12px;
     children:   [ icon-search, entry ];
