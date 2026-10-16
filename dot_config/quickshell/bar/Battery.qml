@@ -31,7 +31,7 @@ Module {
             return `${formatTime(secondsLeft)} ${icon} `;
         return `${percent}%  ${icon} `;
     }
-    tooltip: secondsLeft > 0 ? `${formatTime(secondsLeft)} ${charging ? "do pełna" : "pozostało"}` : ""
+    tooltip: secondsLeft > 0 ? `${formatTime(secondsLeft)} ${charging ? "until full" : "left"}` : ""
 
     onClicked: showTime = !showTime
 }

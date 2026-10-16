@@ -15,8 +15,12 @@ Surface {
     readonly property string iconSource: {
         if (modelData.image)
             return modelData.image;
+        if (modelData.appIcon.startsWith("/"))
+            return `file://${modelData.appIcon}`;
+        if (modelData.appIcon.includes("://"))
+            return modelData.appIcon;
         if (modelData.appIcon)
-            return modelData.appIcon.startsWith("/") || modelData.appIcon.includes("://") ? modelData.appIcon : Quickshell.iconPath(modelData.appIcon, true);
+            return Quickshell.iconPath(modelData.appIcon, true);
         return "";
     }
 

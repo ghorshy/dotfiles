@@ -46,4 +46,6 @@ under `laptops` in `.chezmoidata/hosts.toml` get the laptop variant, every other
 
 Colors, fonts, corner radius, border width and the icon theme live in a single file:
 `.chezmoidata/theme.toml`. Hyprland, hyprlock, Quickshell, rofi and kitty are generated from it,
-so after changing it run `chezmoi apply` and restart Quickshell (`qs kill; qs -d`).
+so after changing it run `chezmoi apply`; Quickshell reloads by itself. If you need to restart it,
+start it through Hyprland so it stays in the logind session (otherwise locking and suspend fail):
+`qs kill; hyprctl dispatch 'hl.dsp.exec_cmd("qs")'`.

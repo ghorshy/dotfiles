@@ -1,6 +1,8 @@
 # Single source of truth for the desktop look.
 # Templates (*.tmpl) in hypr, quickshell, rofi, kitty, gtk, qt and setup.sh read these values.
-# After editing run: chezmoi apply && qs kill; qs -d
+# After editing run: chezmoi apply (Quickshell reloads by itself).
+# To restart Quickshell, start it through Hyprland so it stays in the logind session:
+#   qs kill; hyprctl dispatch 'hl.dsp.exec_cmd("qs")'
 
 [colors]
 # surfaces
@@ -73,6 +75,7 @@ iconTheme   = "Papirus-Dark"
 radius      = 4
 border      = 1
 shadowRange = 4 # px, shared by Hyprland windows and Quickshell popups
+shadowPower = 3 # falloff exponent (Hyprland's render_power)
 gapsIn      = 2
 gapsOut     = 8 # also the margin of notifications and the bar's left padding
 barHeight   = 32

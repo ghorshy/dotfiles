@@ -5,6 +5,7 @@ return {
 	inactive_border = "rgba({{ $c.border }}{{ template "alpha" .opacity.active }})",
 	shadow = "rgba({{ $c.shadow }}{{ template "alpha" .opacity.shadow }})",
 	shadow_range = {{ .ui.shadowRange }},
+	shadow_power = {{ .ui.shadowPower }},
 	rounding = {{ .ui.radius }},
 	border_size = {{ .ui.border }},
 	gaps_in = {{ .ui.gapsIn }},

@@ -90,75 +90,73 @@ Scope {
         onTriggered: root.shown = false
     }
 
-    LazyLoader {
-        active: root.shown
+    // Created once at startup and only shown/hidden, so the first OSD is instant.
+    PanelWindow {
+        visible: root.shown
+        screen: Screens.focused
+        anchors.bottom: true
+        margins.bottom: 80 - Theme.shadowRange
+        exclusiveZone: 0
+        implicitWidth: (root.showBar ? 260 : 56) + 2 * Theme.shadowRange
+        implicitHeight: 48 + 2 * Theme.shadowRange
+        color: "transparent"
+        mask: Region {}
 
-        PanelWindow {
-            screen: Screens.focused
-            anchors.bottom: true
-            margins.bottom: 80 - Theme.shadowRange
-            exclusiveZone: 0
-            implicitWidth: (root.showBar ? 260 : 56) + 2 * Theme.shadowRange
-            implicitHeight: 48 + 2 * Theme.shadowRange
-            color: "transparent"
-            mask: Region {}
+        WlrLayershell.layer: WlrLayer.Overlay
+        WlrLayershell.namespace: "quickshell:osd"
 
-            WlrLayershell.layer: WlrLayer.Overlay
-            WlrLayershell.namespace: "quickshell:osd"
+        Surface {
+            anchors.fill: parent
+            anchors.margins: Theme.shadowRange
 
-            Surface {
+            RowLayout {
                 anchors.fill: parent
-                anchors.margins: Theme.shadowRange
+                anchors.leftMargin: 16
+                anchors.rightMargin: 16
+                spacing: 12
 
-                RowLayout {
-                    anchors.fill: parent
-                    anchors.leftMargin: 16
-                    anchors.rightMargin: 16
-                    spacing: 12
+                Text {
+                    Layout.alignment: Qt.AlignCenter
+                    Layout.fillWidth: !root.showBar
+                    horizontalAlignment: Text.AlignHCenter
+                    text: root.icon
+                    color: Theme.text
+                    font.family: Theme.fontIcons
+                    font.pointSize: Theme.fontSizeLarge
+                }
 
-                    Text {
-                        Layout.alignment: Qt.AlignCenter
-                        Layout.fillWidth: !root.showBar
-                        horizontalAlignment: Text.AlignHCenter
-                        text: root.icon
-                        color: Theme.text
-                        font.family: Theme.fontIcons
-                        font.pointSize: Theme.fontSizeLarge
-                    }
+                Rectangle {
+                    visible: root.showBar
+                    Layout.fillWidth: true
+                    implicitHeight: 6
+                    radius: 3
+                    color: Theme.surface
 
                     Rectangle {
-                        visible: root.showBar
-                        Layout.fillWidth: true
-                        implicitHeight: 6
-                        radius: 3
-                        color: Theme.surface
+                        width: parent.width * Math.max(0, Math.min(1, root.value))
+                        height: parent.height
+                        radius: parent.radius
+                        color: root.dimmed ? Theme.textFaint : Theme.text
 
-                        Rectangle {
-                            width: parent.width * Math.max(0, Math.min(1, root.value))
-                            height: parent.height
-                            radius: parent.radius
-                            color: root.dimmed ? Theme.textFaint : Theme.text
-
-                            Behavior on width {
-                                NumberAnimation {
-                                    duration: Theme.animFast
-                                    easing.type: Easing.BezierSpline
-                                    easing.bezierCurve: Theme.curve
-                                }
+                        Behavior on width {
+                            NumberAnimation {
+                                duration: Theme.animFast
+                                easing.type: Easing.BezierSpline
+                                easing.bezierCurve: Theme.curve
                             }
                         }
                     }
+                }
 
-                    Text {
-                        visible: root.showBar
-                        Layout.preferredWidth: 32
-                        horizontalAlignment: Text.AlignRight
-                        text: Math.round(root.value * 100)
-                        color: Theme.text
-                        font.family: Theme.fontUi
-                        font.pointSize: Theme.fontSize
-                        font.weight: Font.DemiBold
-                    }
+                Text {
+                    visible: root.showBar
+                    Layout.preferredWidth: 32
+                    horizontalAlignment: Text.AlignRight
+                    text: Math.round(root.value * 100)
+                    color: Theme.text
+                    font.family: Theme.fontUi
+                    font.pointSize: Theme.fontSize
+                    font.weight: Font.DemiBold
                 }
             }
         }
