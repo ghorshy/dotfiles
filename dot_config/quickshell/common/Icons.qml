@@ -18,11 +18,10 @@ Singleton {
     readonly property string wifiOff: String.fromCodePoint(0xF092F)
     readonly property string ethernet: String.fromCodePoint(0xF0200)
     readonly property string vpn: String.fromCodePoint(0xF033E)
-    // Font Awesome set, like the volume and microphone glyphs: bare rune when on (dimmed when off),
-    // the filled badge once a device is connected
-    readonly property string bluetooth: String.fromCodePoint(0xF294)
-    readonly property string bluetoothOff: String.fromCodePoint(0xF294)
-    readonly property string bluetoothConnected: String.fromCodePoint(0xF293)
+    // Material Design set, like the Wi-Fi glyphs: the Font Awesome rune was much smaller
+    readonly property string bluetooth: String.fromCodePoint(0xF00AF)
+    readonly property string bluetoothOff: String.fromCodePoint(0xF00B2)
+    readonly property string bluetoothConnected: String.fromCodePoint(0xF00B1)
     readonly property string batteryAlert: String.fromCodePoint(0xF0083)
     readonly property string chevronLeft: String.fromCodePoint(0xF0141)
     readonly property string chevronRight: String.fromCodePoint(0xF0142)

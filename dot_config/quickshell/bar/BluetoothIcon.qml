@@ -15,6 +15,8 @@ Module {
     padLeft: 6
     padRight: 8
     minWidth: 16
+    // the bluetooth rune is narrow, so it looks tiny next to the other icons at the same size
+    fontSize: Theme.fontSize + 3
     dim: !(adapter?.enabled ?? false)
     text: !(adapter?.enabled ?? false) ? Icons.bluetoothOff : connected.length > 0 ? Icons.bluetoothConnected : Icons.bluetooth
     tooltip: {

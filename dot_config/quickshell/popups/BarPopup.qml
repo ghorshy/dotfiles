@@ -16,7 +16,8 @@ PanelWindow {
     property int contentWidth: 300
     readonly property string key: `${name}@${barWindow.screen.name}`
     readonly property bool open: Popups.current === key
-    readonly property int padding: 10
+    // + PopupRow's 6px inset puts text 10px from the edge, like notification cards
+    readonly property int padding: 4
     default property alias content: body.data
 
     // horizontal center of the icon, in screen coordinates
