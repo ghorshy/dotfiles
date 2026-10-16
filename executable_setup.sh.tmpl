@@ -123,17 +123,17 @@ if ask "Install Limine and Snapper packages (snapper, snap-pac, limine hooks)"; 
 fi
 
 # ─── 4. KDE & GTK theme ───────────────────────────────────────────────────────
-if ask "Install Graphite KDE and GTK themes"; then
-  KDE_THEME_DIR="$HOME/.local/share/plasma/desktoptheme/Graphite"
-  if [ -d "$KDE_THEME_DIR" ]; then
-    echo "[!] KDE theme already installed"
+if ask "Install Bazalth Qt theme and Graphite GTK theme"; then
+  QT_THEME_DIR="$HOME/.config/Kvantum/{{ .qt.colorScheme }}"
+  if [ -d "$QT_THEME_DIR" ]; then
+    echo "[!] Qt theme already installed"
   else
-    echo "--- Installing KDE theme ---"
+    echo "--- Installing Qt theme ---"
     cd /tmp || exit
-    rm -rf Graphite-kde-theme
-    git clone https://github.com/vinceliuice/Graphite-kde-theme
-    cd Graphite-kde-theme || exit
-    sh install.sh -t default --rimless
+    rm -rf {{ .qt.colorScheme }}
+    git clone https://github.com/ghorshy/{{ .qt.colorScheme }}
+    cd {{ .qt.colorScheme }} || exit
+    ./install.sh --apply
   fi
 
   GTK_THEME_DIR="$HOME/.local/share/themes/{{ .gtk.theme }}/"
