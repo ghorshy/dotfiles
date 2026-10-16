@@ -61,7 +61,8 @@ Row {
             Text {
                 id: label
                 anchors.centerIn: parent
-                text: button.modelData.name
+                // split workspaces: 6-10 on the second monitor show as 1-5
+                text: (button.modelData.id - 1) % 5 + 1
                 color: button.isActive ? Theme.text : Theme.textDim
                 font.family: Theme.fontUi
                 font.pointSize: Theme.fontSize
