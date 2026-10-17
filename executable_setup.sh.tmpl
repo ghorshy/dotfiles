@@ -123,7 +123,7 @@ if ask "Install Limine and Snapper packages (snapper, snap-pac, limine hooks)"; 
 fi
 
 # ─── 4. KDE & GTK theme ───────────────────────────────────────────────────────
-if ask "Install Bazalth Qt theme and Graphite GTK theme"; then
+if ask "Install Bazalth Qt and GTK themes"; then
   QT_THEME_DIR="$HOME/.config/Kvantum/{{ .qt.colorScheme }}"
   if [ -d "$QT_THEME_DIR" ]; then
     echo "[!] Qt theme already installed"
@@ -142,10 +142,10 @@ if ask "Install Bazalth Qt theme and Graphite GTK theme"; then
   else
     echo "--- Installing GTK theme ---"
     cd /tmp || exit
-    rm -rf Graphite-gtk-theme
-    git clone https://github.com/vinceliuice/Graphite-gtk-theme
-    cd Graphite-gtk-theme || exit
-    sh install.sh -t default -c dark -s compact --tweaks rimless --round {{ .ui.radius }}px
+    rm -rf Bazalth-GTK
+    git clone https://github.com/ghorshy/Bazalth-GTK
+    cd Bazalth-GTK || exit
+    ./install.sh --apply
   fi
 
   nwg-look -a

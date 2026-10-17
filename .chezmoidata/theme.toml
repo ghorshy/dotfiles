@@ -65,7 +65,7 @@ theme = "Bibata-Modern-Ice"
 size  = 20
 
 [gtk]
-theme = "Graphite-Dark-compact"
+theme = "Bazalth" # github.com/ghorshy/Bazalth-GTK, built from the same values
 
 [qt]
 colorScheme = "Bazalth" # github.com/ghorshy/Bazalth-KDE, built from the same values

@@ -15,7 +15,7 @@ Only tested on **Arch Linux** and its derivatives.
 | **Editor** | [neovim](https://github.com/neovim/neovim) with [LazyVim](https://github.com/LazyVim/LazyVim) |
 | **File Managers** | [Thunar](https://gitlab.xfce.org/xfce/thunar), [yazi](https://github.com/sxyazi/yazi) |
 | **Image Viewer** | [qimgv](https://github.com/easymodo/qimgv) |
-| **Theme** | [Bazalth](https://github.com/ghorshy/Bazalth-KDE) Qt theme (built from the same palette), Graphite [GTK](https://github.com/vinceliuice/Graphite-gtk-theme) theme by [vinceliuice](https://github.com/vinceliuice), [Bibata](https://github.com/ful1e5/Bibata_Cursor) cursor, [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) icons |
+| **Theme** | Bazalth [Qt](https://github.com/ghorshy/Bazalth-KDE) and [GTK](https://github.com/ghorshy/Bazalth-GTK) themes (built from the same palette), [Bibata](https://github.com/ful1e5/Bibata_Cursor) cursor, [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) icons |
 | **Bluetooth & USB** | [blueman](https://github.com/blueman-project/blueman), [udiskie](https://github.com/coldfix/udiskie) |
 | **Bootloader** | [Limine](https://github.com/limine-bootloader/limine) with [Snapper](https://github.com/openSUSE/snapper) for btrfs snapshots, [limine-snapper-sync](https://gitlab.com/Zesko/limine-snapper-sync) for automatic boot entry sync |
 | **Dev Tools** | dotnet SDK, Zed, npm, [Godot](https://github.com/godotengine/godot) |
