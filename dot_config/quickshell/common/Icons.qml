@@ -3,7 +3,7 @@ pragma Singleton
 import QtQuick
 import Quickshell
 
-// Nerd Font glyphs, same as the old waybar / rofi configs.
+// Nerd Font glyphs.
 Singleton {
     readonly property var battery: [0xF008E, 0xF007A, 0xF007B, 0xF007C, 0xF007D, 0xF007E, 0xF007F, 0xF0080, 0xF0081, 0xF0082, 0xF0079].map(c => String.fromCodePoint(c))
     readonly property string plug: String.fromCodePoint(0xF1E6)
@@ -28,6 +28,8 @@ Singleton {
     readonly property string check: String.fromCodePoint(0xF012C)
     readonly property string refresh: String.fromCodePoint(0xF0450)
     readonly property string settings: String.fromCodePoint(0xF0493)
+    readonly property string search: String.fromCodePoint(0xF0349)
+    readonly property string calculator: String.fromCodePoint(0xF00EC)
 
     readonly property string lock: String.fromCodePoint(0xF023)
     readonly property string suspend: String.fromCodePoint(0xF03E4)
@@ -37,7 +39,7 @@ Singleton {
     readonly property string yes: String.fromCodePoint(0xF0E1E)
     readonly property string no: String.fromCodePoint(0xF00D)
 
-    // Pick an icon from a list the same way waybar's format-icons does.
+    // Pick the icon for a 0-1 fraction, splitting the range evenly across the list.
     function pick(list: var, fraction: real): string {
         const i = Math.floor(Math.max(0, Math.min(1, fraction)) * 100 * list.length / 101);
         return list[Math.min(list.length - 1, i)];

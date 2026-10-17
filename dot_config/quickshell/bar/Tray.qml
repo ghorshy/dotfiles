@@ -19,7 +19,7 @@ Row {
 
             required property SystemTrayItem modelData
 
-            // waybar hides passive items (e.g. udiskie -s with nothing mounted);
+            // hide passive items (e.g. udiskie -s with nothing mounted);
             // nm-applet and blueman only run as hidden agents, the bar has its own icons for them
             visible: modelData.status !== Status.Passive && !["nm-applet", "blueman"].includes(modelData.id)
             anchors.verticalCenter: parent.verticalCenter

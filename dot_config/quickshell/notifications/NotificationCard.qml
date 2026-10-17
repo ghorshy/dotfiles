@@ -43,7 +43,7 @@ Surface {
     }
 
     Timer {
-        // mako: default-timeout=5000, critical stays until dismissed
+        // 5 s unless the app sets its own timeout, critical stays until dismissed
         interval: card.modelData.expireTimeout > 0 ? card.modelData.expireTimeout * 1000 : 5000
         running: !card.critical && !mouse.containsMouse
         onTriggered: card.modelData.expire()

@@ -1,7 +1,7 @@
 return {
 	terminal = "kitty",
 	fileManager = "thunar",
-	menu = "rofi -show drun",
+	menu = "qs ipc call launcher toggle",
 	powermenu = "qs ipc call powermenu toggle",
 	editor = "nvim",
 }

@@ -59,7 +59,7 @@ ensure_yay() {
 sudo pacman -Syu --noconfirm
 
 # ─── 1. Hyprland packages ─────────────────────────────────────────────────────
-if ask "Install Hyprland UI packages (quickshell, rofi, fonts, grim, slurp, etc.)"; then
+if ask "Install Hyprland UI packages (quickshell, fonts, grim, slurp, etc.)"; then
   install_pacman \
     hyprland \
     networkmanager network-manager-applet \
@@ -68,7 +68,7 @@ if ask "Install Hyprland UI packages (quickshell, rofi, fonts, grim, slurp, etc.
     xdg-desktop-portal-hyprland \
     qt5-wayland qt6-wayland qt5ct kvantum \
     quickshell upower brightnessctl playerctl nwg-look papirus-icon-theme \
-    rofi rofi-emoji rofi-calc \
+    libqalculate \
     inter-font noto-fonts-emoji ttf-jetbrains-mono \
     pavucontrol pamixer \
     grim slurp jq libnotify \

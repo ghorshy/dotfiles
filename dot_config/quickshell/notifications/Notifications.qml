@@ -46,7 +46,7 @@ Scope {
             spacing: 10
 
             Repeater {
-                // newest on top, like mako's sort=-time
+                // newest on top
                 model: ScriptModel {
                     values: [...server.trackedNotifications.values].reverse()
                 }

@@ -1,5 +1,5 @@
 # Single source of truth for the desktop look.
-# Templates (*.tmpl) in hypr, quickshell, rofi, kitty, gtk, qt and setup.sh read these values.
+# Templates (*.tmpl) in hypr, quickshell, kitty, gtk, qt and setup.sh read these values.
 # After editing run: chezmoi apply (Quickshell reloads by itself).
 # To restart Quickshell, start it through Hyprland so it stays in the logind session:
 #   qs kill; hyprctl dispatch 'hl.dsp.exec_cmd("qs")'
@@ -45,7 +45,7 @@ color15 = "fafafa"
 
 # Opacity levels, the only ones used anywhere.
 [opacity]
-popup   = 0.9  # rofi, notifications, OSD, tooltips, active window border
+popup   = 0.9  # launcher, notifications, OSD, tooltips, active window border
 window  = 0.8  # terminal background
 active  = 0.67 # active workspace, inactive window border
 muted   = 0.5  # separators, secondary buttons

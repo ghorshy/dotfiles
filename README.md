@@ -8,8 +8,8 @@ Only tested on **Arch Linux** and its derivatives.
 | Category | Tools |
 |---|---|
 | **Window Manager** | [Hyprland](https://github.com/hyprwm/Hyprland), [hyprlock](https://github.com/hyprwm/hyprlock), [hypridle](https://github.com/hyprwm/hypridle), [hyprpaper](https://github.com/hyprwm/hyprpaper) |
-| **Shell (bar, notifications, OSD, power menu)** | [Quickshell](https://quickshell.org) |
-| **App Launcher** | [rofi](https://github.com/davatorium/rofi) with emoji and calc plugins |
+| **Shell (bar, notifications, OSD, power menu, app launcher)** | [Quickshell](https://quickshell.org) |
+| **Calculator** | [libqalculate](https://github.com/Qalculate/libqalculate) (qalc), in the Quickshell launcher |
 | **Terminal** | [kitty](https://github.com/kovidgoyal/kitty) |
 | **Shell** | [zsh](https://www.zsh.org) with [powerlevel10k](https://github.com/romkatv/powerlevel10k), [zoxide](https://github.com/ajeetdsouza/zoxide), [eza](https://github.com/eza-community/eza), [bat](https://github.com/sharkdp/bat), [fzf](https://github.com/junegunn/fzf), [fastfetch](https://github.com/fastfetch-cli/fastfetch), [lazygit](https://github.com/jesseduffield/lazygit), [btop](https://github.com/aristocratos/btop) |
 | **Editor** | [neovim](https://github.com/neovim/neovim) with [LazyVim](https://github.com/LazyVim/LazyVim) |
@@ -45,7 +45,7 @@ under `laptops` in `.chezmoidata/hosts.toml` get the laptop variant, every other
 ## Theme
 
 Colors, fonts, corner radius, border width and the icon theme live in a single file:
-`.chezmoidata/theme.toml`. Hyprland, hyprlock, Quickshell, rofi and kitty are generated from it,
+`.chezmoidata/theme.toml`. Hyprland, hyprlock, Quickshell and kitty are generated from it,
 so after changing it run `chezmoi apply`; Quickshell reloads by itself. If you need to restart it,
 start it through Hyprland so it stays in the logind session (otherwise locking and suspend fail):
 `qs kill; hyprctl dispatch 'hl.dsp.exec_cmd("qs")'`.

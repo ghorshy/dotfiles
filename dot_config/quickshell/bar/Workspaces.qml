@@ -22,7 +22,7 @@ Row {
             readonly property bool isActive: root.monitor?.activeWorkspace === modelData
 
             anchors.verticalCenter: parent.verticalCenter
-            // GTK button min-width (16) + waybar padding (0 5px)
+            // min-width 16 + 5px padding on each side
             implicitWidth: Math.max(16, label.implicitWidth) + 10
             implicitHeight: 24
             radius: Theme.radius
@@ -39,7 +39,7 @@ Row {
                 }
             }
 
-            // waybar's "pulse" animation for urgent workspaces
+            // pulse urgent workspaces
             Rectangle {
                 id: pulse
                 anchors.fill: parent

@@ -5,7 +5,7 @@ import Quickshell.Io
 import Quickshell.Wayland
 import qs.common
 
-// Replacement for ~/.config/rofi/scripts/powermenu.sh, toggled with `qs ipc call powermenu toggle`.
+// Power menu, toggled with `qs ipc call powermenu toggle`.
 Scope {
     id: root
 
@@ -64,7 +64,7 @@ Scope {
         WlrLayershell.keyboardFocus: WlrKeyboardFocus.Exclusive
         WlrLayershell.namespace: "quickshell:powermenu"
 
-        // click outside closes, like rofi's -click-to-exit
+        // click outside closes
         MouseArea {
             anchors.fill: parent
             onClicked: root.close()
@@ -147,7 +147,6 @@ Scope {
 
                         width: (menu.width - (menu.options.length - 1) * parent.spacing) / menu.options.length
                         height: glyph.implicitHeight + 50
-                        // opaque like the old rofi power menu
                         level: 1
                         borderTint: selected ? Theme.borderActive : Theme.border
 
