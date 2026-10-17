@@ -68,7 +68,7 @@ size  = 20
 theme = "Bazalth" # github.com/ghorshy/Bazalth-GTK, built from the same values
 
 [qt]
-colorScheme = "Bazalth" # github.com/ghorshy/Bazalth-KDE, built from the same values
+colorScheme = "Bazalth" # github.com/ghorshy/Bazalth-QT, built from the same values
 
 [ui]
 iconTheme   = "Papirus-Dark"
