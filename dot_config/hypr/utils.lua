@@ -62,7 +62,7 @@ end
 
 local function audio_switch()
 	local sinks = {}
-	for name in read_cmd("pactl list short sinks"):gmatch("%f[^\n]%d+\t([^\t]+)") do
+	for name in ("\n" .. read_cmd("pactl list short sinks")):gmatch("%f[^\n]%d+\t([^\t]+)") do
 		if name:match("^alsa_output%.usb%-FiiO_") or name:match("^alsa_output%.usb%-PreSonus_") then
 			table.insert(sinks, name)
 		end
@@ -79,7 +79,7 @@ local function audio_switch()
 	end
 
 	os.execute("pactl set-default-sink " .. shell_quote(next_sink))
-	for input in read_cmd("pactl list short sink-inputs"):gmatch("%f[^\n](%d+)\t") do
+	for input in ("\n" .. read_cmd("pactl list short sink-inputs")):gmatch("%f[^\n](%d+)\t") do
 		os.execute("pactl move-sink-input " .. input .. " " .. shell_quote(next_sink))
 	end
 
