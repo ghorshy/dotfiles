@@ -1,3 +1,4 @@
+require("cursor")
 require("autostart")
 require("monitors")
 require("programs")
